@@ -2,6 +2,7 @@
 
 import 'package:first_work/bloc/bloc_bloc.dart';
 import 'package:first_work/menu_item.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -123,7 +124,7 @@ class _SideBarState extends State<SideBar>
                       endIndent: 32,
                     ),
                     MenuItems(
-                      icon: Icons.home,
+                      icon: CupertinoIcons.home,
                       title: "Home",
                       onTap: () {
                         onIcanPressed();
@@ -133,7 +134,7 @@ class _SideBarState extends State<SideBar>
                       },
                     ),
                     MenuItems(
-                      icon: Icons.person,
+                      icon: CupertinoIcons.person,
                       title: "My Account",
                       onTap: () {
                         onIcanPressed();
@@ -143,7 +144,7 @@ class _SideBarState extends State<SideBar>
                       },
                     ),
                     MenuItems(
-                      icon: Icons.shopping_bag,
+                      icon: CupertinoIcons.bag_fill,
                       title: "My Orders",
                       onTap: () {
                         onIcanPressed();
@@ -153,7 +154,7 @@ class _SideBarState extends State<SideBar>
                       },
                     ),
                     MenuItems(
-                      icon: Icons.card_giftcard,
+                      icon: CupertinoIcons.gift,
                       title: "Wishlist",
                       onTap: () {
                         onIcanPressed();
@@ -170,7 +171,7 @@ class _SideBarState extends State<SideBar>
                       endIndent: 32,
                     ),
                     MenuItems(
-                      icon: Icons.settings,
+                      icon: CupertinoIcons.settings,
                       title: "Settings",
                       onTap: () {
                         onIcanPressed();
