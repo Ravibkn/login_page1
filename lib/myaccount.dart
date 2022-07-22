@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:first_work/bloc/bloc_bloc.dart';
 import 'package:flutter/material.dart';
 
-class MyAccount extends StatelessWidget {
+class MyAccount extends StatelessWidget with NavigationStates {
   const MyAccount({Key? key}) : super(key: key);
 
   @override

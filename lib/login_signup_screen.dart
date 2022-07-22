@@ -2,6 +2,7 @@
 
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:first_work/palette.dart';
+import 'package:first_work/routs.dart';
 import 'package:flutter/material.dart';
 
 class LoginSignUpPage extends StatefulWidget {
@@ -420,28 +421,33 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
                   onTap: () {
                     isSignupScreen ? print("Monu") : print("Joshi");
                   },
-                  child: Container(
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.orange.shade200,
-                            Colors.orange.shade400,
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        borderRadius: BorderRadius.circular(30),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(.3),
-                            spreadRadius: 1,
-                            blurRadius: 2,
-                            offset: Offset(0, 1),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, MyRouts.sidebarRout);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.orange.shade200,
+                              Colors.orange.shade400,
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
                           ),
-                        ]),
-                    child: Icon(
-                      Icons.arrow_forward,
-                      color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(.3),
+                              spreadRadius: 1,
+                              blurRadius: 2,
+                              offset: Offset(0, 1),
+                            ),
+                          ]),
+                      child: Icon(
+                        Icons.arrow_forward,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 )
