@@ -16,6 +16,7 @@ class MySettingPage extends StatelessWidget with NavigationStates {
           color: Colors.deepPurple,
         ),
       ),
-    ));
+    ),
+    );
   }
 }

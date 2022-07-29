@@ -86,12 +86,14 @@ class _SideBarState extends State<SideBar>
                         radius: 40,
                       ),
                     ),
-                    Divider(
-                      height: 64,
-                      thickness: .8,
-                      color: Colors.white.withOpacity(0.3),
-                      indent: 32,
-                      endIndent: 32,
+                    SingleChildScrollView(
+                      child: Divider(
+                        height: 64,
+                        thickness: .8,
+                        color: Colors.white.withOpacity(0.3),
+                        indent: 32,
+                        endIndent: 32,
+                      ),
                     ),
                     MenuItems(
                       icon: CupertinoIcons.home,
@@ -173,7 +175,7 @@ class _SideBarState extends State<SideBar>
             ),
           ),
           Align(
-            alignment: const Alignment(0, -0.89),
+            alignment: const Alignment(0, -0.88),
             child: GestureDetector(
               onTap: () {
                 onIcanPressed();
