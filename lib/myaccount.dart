@@ -3,19 +3,20 @@
 import 'package:first_work/bloc/bloc_bloc.dart';
 import 'package:flutter/material.dart';
 
-class MyAccount extends StatelessWidget with NavigationStates {
+
+class MyAccount extends StatefulWidget with NavigationStates {
   const MyAccount({Key? key}) : super(key: key);
 
   @override
+  State<MyAccount> createState() => _MyAccountState();
+}
+
+class _MyAccountState extends State<MyAccount> {
+  @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        "My Account",
-        style: TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-          color: Colors.deepPurple,
-        ),
+    return Scaffold(
+      body: Center(
+        child: Text("MyAccounts"),
       ),
     );
   }

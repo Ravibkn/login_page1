@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: sort_child_properties_last
 
 import 'package:first_work/bloc/bloc_bloc.dart';
 import 'package:first_work/menu_item.dart';
@@ -16,9 +16,7 @@ class SideBar extends StatefulWidget {
 class _SideBarState extends State<SideBar>
     with SingleTickerProviderStateMixin<SideBar> {
   late AnimationController _animationController;
-  // late StreamController<bool> isSideBarOpenedStreamController;
-  // late Stream<bool> isSideBarOpenStream;
-  // late StreamSink<bool> isSideBarOpenedSink;
+
   bool isSidebarOpen = false;
   final _animationDuration = const Duration(milliseconds: 500);
   @override
@@ -26,73 +24,45 @@ class _SideBarState extends State<SideBar>
     super.initState();
     _animationController =
         AnimationController(vsync: this, duration: _animationDuration);
-
-    // isSideBarOpenedStreamController = PublishSubject<bool>();
-    // isSideBarOpenStream = isSideBarOpenedStreamController.stream;
-    // isSideBarOpenedSink = isSideBarOpenedStreamController.sink;
   }
 
   @override
   void dispose() {
     _animationController.dispose();
-    // isSideBarOpenedStreamController.close();
-    // isSideBarOpenedSink.close();
+
     super.dispose();
   }
 
   void onIcanPressed() {
     isSidebarOpen = !isSidebarOpen;
-    // final animationStatus = _animationController;
-    // final isAnimationCompleted = animationStatus == AnimationStatus.completed;
-    // _animationController.addStatusListener((status) {
-    //   if (status == AnimationStatus.completed) {
-    //     isSidebarOpen = !isSidebarOpen;
-    //     _animationController.forward();
-    // Animation completed
-    // } else if (status == AnimationStatus.dismissed) {
-    //   _animationController.reverse();
-    // Reverse animation completed
 
-    //   }
-    // });
-    // if (isAnimationCompleted) {
-    //   // isSideBarOpenedSink.add(false);
-    //   isSidebarOpen = false;
-    //   _animationController.reverse();
-    // } else {
-    //   isSidebarOpen = true;
-
-    //   _animationController.forward();
-    // }
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     final screenwidth = MediaQuery.of(context).size.width;
-    // return StreamBuilder<bool>(
-    //     stream: isSideBarOpenStream,
-    //     builder: (context, isSideBarOpenedAsync) {
+
     return AnimatedPositioned(
       duration: _animationDuration,
       top: 0,
       bottom: 0,
       left: isSidebarOpen ? 0 : -screenwidth,
-      right: isSidebarOpen ? 0 : screenwidth - 45,
+      right: isSidebarOpen ? 0 : screenwidth - 35,
       child: Row(
         children: [
           Expanded(
             child: SafeArea(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                color: Color(0xFF262AAA),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                color: const Color(0xFF262AAA),
                 child: Column(
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
-                    SizedBox(
-                      height: 60,
+                    const SizedBox(
+                      height: 70,
                     ),
-                    ListTile(
+                    const ListTile(
                       title: Text(
                         "Ravi",
                         style: TextStyle(
@@ -116,12 +86,14 @@ class _SideBarState extends State<SideBar>
                         radius: 40,
                       ),
                     ),
-                    Divider(
-                      height: 64,
-                      thickness: .8,
-                      color: Colors.white.withOpacity(0.3),
-                      indent: 32,
-                      endIndent: 32,
+                    SingleChildScrollView(
+                      child: Divider(
+                        height: 64,
+                        thickness: .8,
+                        color: Colors.white.withOpacity(0.3),
+                        indent: 32,
+                        endIndent: 32,
+                      ),
                     ),
                     MenuItems(
                       icon: CupertinoIcons.home,
@@ -203,7 +175,7 @@ class _SideBarState extends State<SideBar>
             ),
           ),
           Align(
-            alignment: Alignment(0, -0.8),
+            alignment: const Alignment(0, -0.88),
             child: GestureDetector(
               onTap: () {
                 onIcanPressed();
@@ -213,11 +185,11 @@ class _SideBarState extends State<SideBar>
                 child: Container(
                   width: 35,
                   height: 110,
-                  color: Color(0xFF262AAA),
+                  color: const Color(0xFF262AAA),
                   alignment: Alignment.centerLeft,
                   child: Icon(
                     isSidebarOpen ? Icons.close : Icons.menu,
-                    color: Color(0xFF1BB5FD),
+                    color: const Color(0xFF1BB5FD),
                   ),
                 ),
               ),

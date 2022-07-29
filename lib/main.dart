@@ -5,8 +5,12 @@ import 'package:first_work/routs.dart';
 import 'package:first_work/sidebar_layout.dart';
 // import 'package:first_work/login_signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
 }
 
