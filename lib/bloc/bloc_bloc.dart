@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:first_work/bottom_navigation_bar.dart';
 import 'package:first_work/home_page.dart';
 import 'package:first_work/log_out.dart';
 import 'package:first_work/myaccount.dart';
@@ -14,6 +15,7 @@ enum NavigationEvent {
   myWishListClickedEvent,
   mySettingClickedEvent,
   myLogoutClickedEvent,
+  myNavigationBarClickedevent,
 }
 
 abstract class NavigationStates {}
@@ -40,6 +42,9 @@ class NavigationBloc extends Bloc<NavigationEvent, NavigationStates> {
 
         case NavigationEvent.myLogoutClickedEvent:
           emit(const LogOut());
+          break;
+        case NavigationEvent.myNavigationBarClickedevent:
+          emit(const NavBar());
           break;
       }
     });

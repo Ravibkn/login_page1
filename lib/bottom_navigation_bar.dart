@@ -7,9 +7,18 @@
 // import 'package:curvdnavbar/setting.dart';
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:first_work/app.dart';
+import 'package:first_work/bloc/bloc_bloc.dart';
+import 'package:first_work/main.dart';
+import 'package:first_work/page1.dart';
+import 'package:first_work/page2.dart';
+import 'package:first_work/page4.dart';
+import 'package:first_work/page5.dart';
 import 'package:flutter/material.dart';
 
-class NavBar extends StatefulWidget {
+import 'home_page.dart';
+
+class NavBar extends StatefulWidget with NavigationStates {
   const NavBar({Key? key}) : super(key: key);
 
   @override
@@ -20,11 +29,11 @@ class _NavBarState extends State<NavBar> {
   final navigationkey = GlobalKey<CurvedNavigationBarState>();
   int index = 2;
   final screens = [
-    // const Search(),
-    // const SettingPage(),
-    // const HomePage(),
-    // const GoogleMap(),
-    // const ProfilePage(),
+    const Page1(),
+    const Page2(),
+    const HomePage(),
+    const Page4(),
+    const Page5(),
   ];
 
   @override
@@ -37,23 +46,14 @@ class _NavBarState extends State<NavBar> {
       Icon(Icons.person, size: 30),
     ];
     return Scaffold(
+      extendBody: true,
       backgroundColor: Color.fromARGB(237, 223, 180, 213),
-      // appBar: AppBar(
-      //   backgroundColor: Color.fromARGB(237, 223, 180, 213),
-      //   title: Center(
-      //     child: Text(
-      //       "MyApp",
-      //       style: TextStyle(color: Colors.blue),
-      //     ),
-      //   ),
-      //   elevation: 0,
-      // ),
       body: screens[index],
       bottomNavigationBar: Theme(
         data: Theme.of(context)
             .copyWith(iconTheme: IconThemeData(color: Colors.white)),
         child: CurvedNavigationBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.transparent,
           color: Colors.blue,
           height: 60,
           animationCurve: Curves.linear,

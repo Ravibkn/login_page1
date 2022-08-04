@@ -6,6 +6,8 @@ import 'package:first_work/colors_constent.dart';
 import 'package:first_work/models/carousel_model.dart';
 import 'package:first_work/models/popular_destination_model.dart';
 import 'package:first_work/models/travlog_model.dart';
+import 'package:first_work/routs.dart';
+import 'package:first_work/sidebar.dart';
 import 'package:first_work/style_constent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -30,8 +32,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // bottomNavigationBar: NavBar(),
       backgroundColor: mBackgroundColor,
       appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, MyRouts.menubarRout);
+              },
+              icon: Icon(Icons.menu),
+              color: Colors.black)
+        ],
         backgroundColor: mBackgroundColor,
         elevation: 0,
         title: SvgPicture.asset("assets/svg/travelkuy_logo.svg"),
@@ -413,6 +424,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      drawer: SideBar(),
     );
   }
 }
