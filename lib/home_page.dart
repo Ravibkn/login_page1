@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage> {
       // bottomNavigationBar: NavBar(),
       backgroundColor: mBackgroundColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
               onPressed: () {
@@ -43,12 +44,15 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.menu),
               color: Colors.black)
         ],
-        backgroundColor: mBackgroundColor,
+        backgroundColor: Theme.of(context).canvasColor,
         elevation: 0,
-        title: SvgPicture.asset("assets/svg/travelkuy_logo.svg"),
+        title: Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: SvgPicture.asset("assets/svg/travelkuy_logo.svg"),
+        ),
       ),
       body: Container(
-        color: Colors.white,
+        color: Theme.of(context).canvasColor,
         child: ListView(
           physics: ClampingScrollPhysics(),
           children: [
@@ -141,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                           padding: EdgeInsets.only(left: 16),
                           height: 64,
                           decoration: BoxDecoration(
-                            color: mFillColor,
+                            color: Theme.of(context).canvasColor,
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: mBorderColor, width: 1),
                           ),
@@ -178,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                           padding: EdgeInsets.only(left: 16),
                           height: 64,
                           decoration: BoxDecoration(
-                            color: mFillColor,
+                            color: Theme.of(context).canvasColor,
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: mBorderColor, width: 1),
                           ),
@@ -222,7 +226,7 @@ class _HomePageState extends State<HomePage> {
                           padding: EdgeInsets.only(left: 16),
                           height: 64,
                           decoration: BoxDecoration(
-                            color: mFillColor,
+                            color: Theme.of(context).canvasColor,
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: mBorderColor, width: 1),
                           ),
@@ -259,7 +263,7 @@ class _HomePageState extends State<HomePage> {
                           padding: EdgeInsets.only(left: 16),
                           height: 64,
                           decoration: BoxDecoration(
-                            color: mFillColor,
+                            color: Theme.of(context).canvasColor,
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: mBorderColor, width: 1),
                           ),
@@ -318,6 +322,7 @@ class _HomePageState extends State<HomePage> {
                       height: 140,
                       width: 120,
                       decoration: BoxDecoration(
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(color: mBorderColor, width: 1),
                       ),
@@ -424,7 +429,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      drawer: SideBar(),
+      // drawer: SideBar(),
     );
   }
 }

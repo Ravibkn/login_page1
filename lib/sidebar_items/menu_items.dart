@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 
-class MenuItems extends StatelessWidget {
+class MenuItems1 extends StatelessWidget {
   final IconData icon;
   final String title;
   final Function() onTap;
 
-  const MenuItems({
+  const MenuItems1({
     Key? key,
     required this.icon,
     required this.title,

@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:first_work/sidebar_items/menu_items.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../menu_item.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -12,7 +12,6 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        
         body: Container(
           color: Colors.black,
           child: ListView(
@@ -95,7 +94,7 @@ class MyDrawer extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: MenuItems(
+                            child: MenuItems1(
                               icon: Icons.currency_rupee,
                               title: "Jio Recharge",
                               onTap: () {},
@@ -116,7 +115,7 @@ class MyDrawer extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: MenuItems(
+                            child: MenuItems1(
                               icon: Icons.attractions_outlined,
                               title: "Jio Engage",
                               onTap: () {},
@@ -148,7 +147,7 @@ class MyDrawer extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: MenuItems(
+                            child: MenuItems1(
                               icon: Icons.home,
                               title: "Home",
                               onTap: () {},
@@ -169,7 +168,7 @@ class MyDrawer extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: MenuItems(
+                            child: MenuItems1(
                               icon: Icons.favorite_outline,
                               title: "Favourite Channels",
                               onTap: () {},
@@ -190,7 +189,7 @@ class MyDrawer extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: MenuItems(
+                            child: MenuItems1(
                               icon: Icons.format_list_numbered_rtl_sharp,
                               title: "My WatchList",
                               onTap: () {},
@@ -211,7 +210,7 @@ class MyDrawer extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: MenuItems(
+                            child: MenuItems1(
                               icon: Icons.adjust_sharp,
                               title: "My Recordings",
                               onTap: () {},
@@ -232,7 +231,7 @@ class MyDrawer extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: MenuItems(
+                            child: MenuItems1(
                               icon: Icons.language,
                               title: "Display/Content Language",
                               onTap: () {},
@@ -264,7 +263,7 @@ class MyDrawer extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: MenuItems(
+                            child: MenuItems1(
                               icon: Icons.feed_sharp,
                               title: "Feedback",
                               onTap: () {},
@@ -285,7 +284,7 @@ class MyDrawer extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: MenuItems(
+                            child: MenuItems1(
                               icon: Icons.settings,
                               title: "Settings",
                               onTap: () {},
@@ -306,7 +305,7 @@ class MyDrawer extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: MenuItems(
+                            child: MenuItems1(
                               icon: Icons.help_outlined,
                               title: "Support",
                               onTap: () {},

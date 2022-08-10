@@ -7,9 +7,8 @@
 // import 'package:curvdnavbar/setting.dart';
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:first_work/app.dart';
 import 'package:first_work/bloc/bloc_bloc.dart';
-import 'package:first_work/main.dart';
+
 import 'package:first_work/page1.dart';
 import 'package:first_work/page2.dart';
 import 'package:first_work/page4.dart';
@@ -54,7 +53,7 @@ class _NavBarState extends State<NavBar> {
             .copyWith(iconTheme: IconThemeData(color: Colors.white)),
         child: CurvedNavigationBar(
           backgroundColor: Colors.transparent,
-          color: Colors.blue,
+          color: Theme.of(context).cardColor,
           height: 60,
           animationCurve: Curves.linear,
           animationDuration: Duration(milliseconds: 600),

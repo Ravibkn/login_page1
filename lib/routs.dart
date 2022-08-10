@@ -3,4 +3,5 @@ class MyRouts {
   static String sidebarRout = "/sidebar";
   static String bottomBarRout = "/bootombar";
   static String menubarRout = "/menu";
+  static String drawerRout = "/drawer";
 }
