@@ -19,29 +19,9 @@ class SidebarLayOut extends StatefulWidget {
 class _SidebarLayOutState extends State<SidebarLayOut> {
   @override
   Widget build(BuildContext context) {
-    // final items = [
-    //   Icon(Icons.search, size: 30),
-    //   Icon(Icons.settings, size: 30),
-    //   Icon(Icons.home, size: 30),
-    //   Icon(Icons.location_on, size: 30),
-    //   Icon(Icons.person, size: 30),
-    // ];
     return Scaffold(
-        // bottomNavigationBar: Theme(
-        //   data: Theme.of(context)
-        //       .copyWith(iconTheme: IconThemeData(color: Colors.white)),
-        //   child: CurvedNavigationBar(
-        //     items: items,
-        //     height: 50,
-        //     backgroundColor: Colors.white,
-        //     color: Colors.blue,
-        //     animationCurve: Curves.linear,
-        //     animationDuration: Duration(milliseconds: 600),
-        //   ),
-        // ),
         body: BlocProvider(
       create: (context) => NavigationBloc(
-        // HomePage(),
         NavBar(),
       ),
       child: Stack(
@@ -50,8 +30,6 @@ class _SidebarLayOutState extends State<SidebarLayOut> {
               builder: (context, navigationstate) {
             return navigationstate as Widget;
           }),
-          // MyAccount(),
-
           SideBar(),
         ],
       ),

@@ -1,16 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, sized_box_for_whitespace
 
-import 'package:card_swiper/card_swiper.dart';
 import 'package:first_work/bloc/bloc_bloc.dart';
 import 'package:first_work/colors_constent.dart';
-import 'package:first_work/models/carousel_model.dart';
-import 'package:first_work/models/popular_destination_model.dart';
-import 'package:first_work/models/travlog_model.dart';
 import 'package:first_work/routs.dart';
-import 'package:first_work/sidebar.dart';
 import 'package:first_work/style_constent.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatefulWidget with NavigationStates {
   const HomePage({Key? key}) : super(key: key);
@@ -20,416 +14,605 @@ class HomePage extends StatefulWidget with NavigationStates {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _current = 0;
-  List<T> map<T>(List list, Function handler) {
-    List<T> result = [];
-    for (var i = 0; i < list.length; i++) {
-      result.add(handler(i, list[i]));
-    }
-    return result;
-  }
+  //
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: NavBar(),
-      backgroundColor: mBackgroundColor,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, MyRouts.menubarRout);
-              },
-              icon: Icon(Icons.menu),
-              color: Colors.black)
-        ],
-        backgroundColor: Theme.of(context).canvasColor,
-        elevation: 0,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 18.0),
-          child: SvgPicture.asset("assets/svg/travelkuy_logo.svg"),
+      appBar: PreferredSize(
+        child: AppBar(
+          elevation: 2,
+          title: Center(
+              child: Text(
+            "Driver App",
+            style: TextStyle(
+              shadows: <Shadow>[
+                Shadow(
+                  offset: Offset(2.0, 2.0),
+                  blurRadius: 3.0,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
+                Shadow(
+                  offset: Offset(2.0, 2.0),
+                  blurRadius: 8.0,
+                  color: Color.fromARGB(124, 94, 94, 107),
+                ),
+              ],
+              color: Colors.white,
+            ),
+          )),
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.cyan,
         ),
+        preferredSize: Size.fromHeight(30.0),
       ),
       body: Container(
-        color: Theme.of(context).canvasColor,
+        color: Colors.white,
         child: ListView(
-          physics: ClampingScrollPhysics(),
+          physics: const ClampingScrollPhysics(),
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 70, bottom: 30),
+              padding: const EdgeInsets.only(left: 70, top: 20),
               child: Text(
-                "Hi, Franklin 👋 This Promos for You!",
-                style: mTitleStyle,
+                "",
+                style: TextStyle(
+                  color: Theme.of(context).cardColor,
+                ),
               ),
             ),
-            Container(
-              alignment: Alignment.centerLeft,
-              margin: EdgeInsets.only(left: 16, right: 16),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 190,
-                    child: Swiper(
-                      onIndexChanged: (index) {
-                        setState(() {
-                          _current = index;
-                        });
-                      },
-                      autoplay: true,
-                      layout: SwiperLayout.DEFAULT,
-                      itemCount: carousels.length,
-                      itemBuilder: (BuildContext context, index) {
-                        return Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            image: DecorationImage(
-                                image: AssetImage(carousels[index].image),
-                                fit: BoxFit.fill),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: map(carousels, (index, image) {
-                          return Container(
-                            alignment: Alignment.centerLeft,
-                            height: 6,
-                            width: 6,
-                            margin: EdgeInsets.only(right: 8),
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: _current == index
-                                    ? mBlueColor
-                                    : mGreyColor),
-                          );
-                        }),
-                      ),
-                      Text(
-                        "More...",
-                        style: mMoreDiscountStyle,
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            // InkWell(
+            //   onTap: () {
+            //     print("Profile");
+            //   },
+            //   child: Container(
+            //     alignment: Alignment.centerLeft,
+            //     margin: const EdgeInsets.only(left: 16, right: 16),
+            //     width: MediaQuery.of(context).size.width,
+            //     child: Column(
+            //       crossAxisAlignment: CrossAxisAlignment.start,
+            //       mainAxisAlignment: MainAxisAlignment.start,
+            //       children: [
+            //         Container(
+            //           width: MediaQuery.of(context).size.width,
+            //           height: 200,
+            //           decoration: BoxDecoration(
+            //               boxShadow: [
+            //                 BoxShadow(
+            //                     blurRadius: 15,
+            //                     spreadRadius: 1,
+            //                     color: Colors.grey)
+            //               ],
+            //               color: Colors.cyan,
+            //               borderRadius: BorderRadius.circular(15)),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
+
             Padding(
-              padding: EdgeInsets.only(left: 16, top: 24),
-              child: Text(
-                "Let's Booking!",
-                style: mTitleStyle,
+              padding: const EdgeInsets.only(left: 16, top: 10, bottom: 12),
+              child: Center(
+                child: Text(
+                  "Pick & Drop History",
+                  style: mTitleStyle,
+                ),
               ),
             ),
+
             Container(
-              height: 144,
-              margin: EdgeInsets.only(left: 16, right: 16),
+              color: Colors.white,
+              height: 80,
+              margin: const EdgeInsets.only(left: 16, right: 16),
               child: Column(
                 children: [
                   Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.only(right: 8),
-                          padding: EdgeInsets.only(left: 16),
-                          height: 64,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).canvasColor,
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: mBorderColor, width: 1),
-                          ),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/svg/service_flight_icon.svg",
-                                fit: BoxFit.contain,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 16),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Flight",
-                                      style: mServiceTitleStyle,
-                                    ),
-                                    Text(
-                                      "Feel-Freedom",
-                                      style: mServiceSubtitleStyle,
-                                    )
-                                  ],
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, MyRouts.pickandDropRout);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.only(left: 16),
+                            height: 64,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 5,
+                                    spreadRadius: .2,
+                                    color: Colors.grey)
+                              ],
+                              color: Colors.cyan,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: mBorderColor, width: 1),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset("images/distance.png",
+                                    scale: 15, color: mIconeColor),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Pick & Drop",
+                                        style: mServiceTitleStyle,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.only(right: 8),
-                          padding: EdgeInsets.only(left: 16),
-                          height: 64,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).canvasColor,
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: mBorderColor, width: 1),
-                          ),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/svg/service_train_icon.svg",
-                                fit: BoxFit.contain,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 16),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Trains",
-                                      style: mServiceTitleStyle,
-                                    ),
-                                    Text(
-                                      "Intercity",
-                                      style: mServiceSubtitleStyle,
-                                    )
-                                  ],
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, MyRouts.pickandDropHistoryRout);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.only(left: 16),
+                            height: 64,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 5,
+                                    spreadRadius: .2,
+                                    color: Colors.grey)
+                              ],
+                              color: Colors.cyan,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: mBorderColor, width: 1),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  "images/verification-of-delivery-list-clipboard-symbol.png",
+                                  scale: 20,
+                                  color: mIconeColor,
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Pick N History",
+                                        style: mServiceTitleStyle,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
+                  //
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, bottom: 12),
+              child: Center(
+                child: Text(
+                  "Pick Up List & History",
+                  style: mTitleStyle,
+                ),
+              ),
+            ),
+
+            Container(
+              height: 80,
+              margin: const EdgeInsets.only(left: 16, right: 16),
+              child: Column(
+                children: [
                   Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.only(right: 8),
-                          padding: EdgeInsets.only(left: 16),
-                          height: 64,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).canvasColor,
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: mBorderColor, width: 1),
-                          ),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/svg/service_hotel_icon.svg",
-                                fit: BoxFit.contain,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 16),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Hotel",
-                                      style: mServiceTitleStyle,
-                                    ),
-                                    Text(
-                                      "Let's Take Break",
-                                      style: mServiceSubtitleStyle,
-                                    )
-                                  ],
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, MyRouts.pickupListRout);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.only(left: 16),
+                            height: 64,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 5,
+                                    spreadRadius: .2,
+                                    color: Colors.grey)
+                              ],
+                              color: Colors.cyan,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: mBorderColor, width: 1),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  "images/pickup-car.png",
+                                  scale: 15,
+                                  color: mIconeColor,
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Pick Up List",
+                                        style: mServiceTitleStyle,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.only(right: 8),
-                          padding: EdgeInsets.only(left: 16),
-                          height: 64,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).canvasColor,
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: mBorderColor, width: 1),
-                          ),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                "assets/svg/service_car_rental_icon.svg",
-                                fit: BoxFit.contain,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 16),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Car Rental",
-                                      style: mServiceTitleStyle,
-                                    ),
-                                    Text(
-                                      "Around The City",
-                                      style: mServiceSubtitleStyle,
-                                    )
-                                  ],
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, MyRouts.pickupHistoryRout);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.only(left: 16),
+                            height: 64,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 5,
+                                    spreadRadius: .2,
+                                    color: Colors.grey)
+                              ],
+                              color: Colors.cyan,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: mBorderColor, width: 1),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  "images/verification-of-delivery-list-clipboard-symbol.png",
+                                  scale: 20,
+                                  color: mIconeColor,
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Pickup History",
+                                        style: mServiceTitleStyle,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  //
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 16, top: 24, bottom: 12),
-              child: Text(
-                "Popular Destinations!",
-                style: mTitleStyle,
+              padding: const EdgeInsets.only(left: 16, bottom: 12),
+              child: Center(
+                child: Text(
+                  "Drs List & History",
+                  style: mTitleStyle,
+                ),
               ),
             ),
+
             Container(
-              height: 140,
-              child: ListView.builder(
-                itemCount: populars.length,
-                scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.only(left: 16, right: 16),
-                itemBuilder: (context, index) {
-                  return Card(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Container(
-                      height: 140,
-                      width: 120,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: mBorderColor, width: 1),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 8, bottom: 12),
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              populars[index].image,
-                              height: 74,
+              height: 80,
+              margin: const EdgeInsets.only(left: 16, right: 16),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, MyRouts.drsListRout);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.only(left: 16),
+                            height: 64,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 5,
+                                    spreadRadius: .2,
+                                    color: Colors.grey)
+                              ],
+                              color: Colors.cyan,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: mBorderColor, width: 1),
                             ),
-                            Text(
-                              populars[index].name,
-                              style: mPopularDestinationTitleStyle,
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  "images/drslist2.png",
+                                  scale: 9,
+                                  color: mIconeColor,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 16),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Drs List",
+                                        style: mServiceTitleStyle,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                            Text(
-                              populars[index].country,
-                              style: mPopularDestinationSubtitleStyle,
-                            ),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                },
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, MyRouts.drsHistory);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.only(left: 16),
+                            height: 64,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 5,
+                                    spreadRadius: .2,
+                                    color: Colors.grey)
+                              ],
+                              color: Colors.cyan,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: mBorderColor, width: 1),
+                            ),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  "images/verification-of-delivery-list-clipboard-symbol.png",
+                                  scale: 20,
+                                  color: mIconeColor,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 16),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Drs History",
+                                        style: mServiceTitleStyle,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  //
+                ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 16, top: 24, bottom: 12),
-              child: Text(
-                "Travlog!",
-                style: mTitleStyle,
+              padding: const EdgeInsets.only(left: 16, bottom: 12),
+              child: Center(
+                child: Text(
+                  "Scan Web & Profile",
+                  style: mTitleStyle,
+                ),
               ),
             ),
             Container(
-              height: 181,
-              child: ListView.builder(
-                  padding: EdgeInsets.only(left: 16),
-                  itemCount: travlogs.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.only(right: 16),
-                      width: 220,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Stack(
-                            children: [
-                              Container(
-                                height: 104,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  image: DecorationImage(
-                                      image: AssetImage(travlogs[index].image),
-                                      fit: BoxFit.cover),
+              color: Colors.white,
+              height: 150,
+              margin: const EdgeInsets.only(left: 16, right: 16),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, MyRouts.scanawbRout);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.only(left: 16),
+                            height: 110,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 5,
+                                    spreadRadius: .2,
+                                    color: Colors.grey)
+                              ],
+                              color: Colors.cyan,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: mBorderColor, width: 1),
+                            ),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 8.0),
+                                  child: Image.asset(
+                                    "images/mobscan.png",
+                                    // color: Colors.black,
+                                    scale: 8,
+                                    color: mIconeColor,
+                                  ),
                                 ),
-                              ),
-                              Positioned(
-                                child: SvgPicture.asset(
-                                    "assets/svg/travlog_top_corner.svg"),
-                                right: 0,
-                              ),
-                              Positioned(
-                                top: 8,
-                                right: 8,
-                                child: SvgPicture.asset(
-                                    "assets/svg/travelkuy_logo_white.svg"),
-                              ),
-                              Positioned(
-                                bottom: 0,
-                                child: SvgPicture.asset(
-                                    "assets/svg/travlog_bottom_gradient.svg"),
-                              ),
-                              Positioned(
-                                  bottom: 8,
-                                  left: 8,
-                                  child: Text(
-                                    "Travlog ${travlogs[index].name}",
-                                    style: mTravlogTitleStyle,
-                                  ))
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 5),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 5.0),
+                                        child: Text("Scan Awb",
+                                            style: mServiceTitleStyle),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            travlogs[index].content,
-                            maxLines: 3,
-                            style: mTravlogContentStyle,
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            travlogs[index].place,
-                            style: mTravlogPlaceStyle,
-                          )
-                        ],
+                        ),
                       ),
-                    );
-                  }),
-            )
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, MyRouts.profileRout);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 8),
+                            padding: const EdgeInsets.only(left: 16),
+                            height: 110,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 5,
+                                    spreadRadius: .2,
+                                    color: Colors.grey)
+                              ],
+                              color: Colors.cyan,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: mBorderColor, width: 1),
+                            ),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      right: 15, top: 15.0),
+                                  child: Image.asset(
+                                    "images/user.png",
+                                    scale: 11,
+                                    color: mIconeColor,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 16),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        right: 25, top: 15.0),
+                                    child: Text("Profile",
+                                        style: mServiceTitleStyle),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  //
+                ],
+              ),
+            ),
+
+            // Container(
+            //   height: 140,
+            //   child: ListView.builder(
+            //     itemCount: populars.length,
+            //     scrollDirection: Axis.horizontal,
+            //     padding: const EdgeInsets.only(left: 12, right: 16),
+            //     itemBuilder: (context, index) {
+            //       return Card(
+            //         elevation: 5,
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(12),
+            //         ),
+            //         child: Container(
+            //           height: 140,
+            //           width: 160,
+            //           decoration: BoxDecoration(
+            //             color: Colors.cyan,
+            //             borderRadius: BorderRadius.circular(12),
+            //             border: Border.all(color: mBorderColor, width: 1),
+            //           ),
+            //           child: Padding(
+            //             padding: const EdgeInsets.only(top: 8, bottom: 12),
+            //             child: Column(
+            //               children: [
+            //                 Image.asset(
+            //                   populars[index].image,
+            //                   height: 74,
+            //                   scale: 10,
+            //                 ),
+            //                 Text(
+            //                   populars[index].name,
+            //                   style: const TextStyle(color: Colors.black),
+            //                 ),
+            //                 Text(
+            //                   populars[index].country,
+            //                   style: mPopularDestinationSubtitleStyle,
+            //                 ),
+            //               ],
+            //             ),
+            //           ),
+            //         ),
+            //       );
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),
-      // drawer: SideBar(),
+      // drawer: const Drawer()
     );
   }
 }

@@ -1,4 +1,4 @@
-// ignore_for_file: sort_child_properties_last
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors
 
 import 'package:first_work/bloc/bloc_bloc.dart';
 import 'package:first_work/menu_item.dart';
@@ -57,7 +57,7 @@ class _SideBarState extends State<SideBar>
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    color: Theme.of(context).cardColor,
+                    color: Colors.cyan,
                     child: Column(
                       // ignore: prefer_const_literals_to_create_immutables
                       children: [
@@ -100,8 +100,8 @@ class _SideBarState extends State<SideBar>
                           onTap: () {
                             onIcanPressed();
 
-                            BlocProvider.of<NavigationBloc>(context)
-                                .add(NavigationEvent.homePageClikedEvent);
+                            BlocProvider.of<NavigationBloc>(context).add(
+                                NavigationEvent.myNavigationBarClickedevent);
                           },
                         ),
                         MenuItems(
@@ -183,18 +183,34 @@ class _SideBarState extends State<SideBar>
                 onIcanPressed();
               },
               // child: const MyDrawer(),
-              child: ClipPath(
-                clipper: CustomMenuClipper(),
-                child: Container(
-                  width: 35,
-                  height: 110,
-                  color: Theme.of(context).cardColor,
-                  alignment: Alignment.centerLeft,
-                  child: Center(
-                    child: Icon(
-                      isSidebarOpen ? Icons.close : Icons.menu,
-                      color: Colors.black,
-                      size: 20,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10.0),
+                child: ClipPath(
+                  clipper: CustomMenuClipper(),
+                  child: Container(
+                    width: 35,
+                    height: 110,
+                    color: Colors.cyan,
+                    alignment: Alignment.centerLeft,
+                    child: Center(
+                      child: Icon(
+                        isSidebarOpen ? Icons.close : Icons.menu,
+                        color: Colors.white,
+                        size: 20,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        shadows: [
+                          Shadow(
+                            offset: Offset(1.0, 1.0),
+                            blurRadius: 3.0,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                          Shadow(
+                            offset: Offset(1.0, 1.0),
+                            blurRadius: 8.0,
+                            color: Color.fromARGB(124, 94, 94, 107),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

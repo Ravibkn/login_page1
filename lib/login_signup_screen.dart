@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, avoid_print
 
-import 'package:community_material_icon/community_material_icon.dart';
 import 'package:first_work/palette.dart';
 import 'package:first_work/routs.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +49,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
                         ),
                         children: [
                           TextSpan(
-                            text: isSignupScreen ? " Ravi" : " Back",
+                            text: " Back",
                             style: TextStyle(
                               fontSize: 25,
                               fontWeight: FontWeight.bold,
@@ -64,9 +63,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
                       height: 5,
                     ),
                     Text(
-                      isSignupScreen
-                          ? "Signup to Continue"
-                          : "Signin to Continue",
+                      "Signin to Continue",
                       style: TextStyle(
                         letterSpacing: 1,
                         color: Colors.white,
@@ -82,14 +79,14 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
             duration: Duration(milliseconds: 400),
             curve: Curves.linear,
             top: isSignupScreen
-                ? MediaQuery.of(context).size.height * .22
-                : MediaQuery.of(context).size.height * .27,
+                ? MediaQuery.of(context).size.height * .30
+                : MediaQuery.of(context).size.height * .40,
             child: AnimatedContainer(
               duration: Duration(milliseconds: 400),
               curve: Curves.linear,
               padding: EdgeInsets.all(20),
               height: isSignupScreen
-                  ? MediaQuery.of(context).size.height * .55
+                  ? MediaQuery.of(context).size.height * .40
                   : MediaQuery.of(context).size.height * .40,
               width: MediaQuery.of(context).size.width - 40,
               margin: EdgeInsets.symmetric(horizontal: 20),
@@ -107,7 +104,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
               child: GestureDetector(
                 onTap: () {
                   setState(() {
-                    isSignupScreen = false;
+                    isSignupScreen = true;
                   });
                 },
                 child: SingleChildScrollView(
@@ -119,7 +116,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                isSignupScreen = false;
+                                isSignupScreen = true;
                               });
                             },
                             child: Column(
@@ -127,14 +124,11 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
                                 Text(
                                   "LOGIN",
                                   style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                    color: !isSignupScreen
-                                        ? Palette.activeColor
-                                        : Palette.textColor1,
-                                  ),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Palette.activeColor),
                                 ),
-                                if (!isSignupScreen)
+                                if (isSignupScreen)
                                   Container(
                                     margin: EdgeInsets.only(top: 3),
                                     height: 2,
@@ -144,37 +138,37 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
                               ],
                             ),
                           ),
-                          GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                isSignupScreen = true;
-                              });
-                            },
-                            child: Column(
-                              children: [
-                                Text(
-                                  "SIGNUP",
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                    color: isSignupScreen
-                                        ? Palette.activeColor
-                                        : Palette.textColor1,
-                                  ),
-                                ),
-                                if (isSignupScreen)
-                                  Container(
-                                    margin: EdgeInsets.only(top: 3),
-                                    height: 2,
-                                    width: 55,
-                                    color: Colors.orange,
-                                  ),
-                              ],
-                            ),
-                          )
+                          // GestureDetector(
+                          //   onTap: () {
+                          //     setState(() {
+                          //       isSignupScreen = true;
+                          //     });
+                          //   },
+                          //   child: Column(
+                          //     children: [
+                          //       Text(
+                          //         "SIGNUP",
+                          //         style: TextStyle(
+                          //           fontSize: 14,
+                          //           fontWeight: FontWeight.bold,
+                          //           color: isSignupScreen
+                          //               ? Palette.activeColor
+                          //               : Palette.textColor1,
+                          //         ),
+                          //       ),
+                          //       if (isSignupScreen)
+                          //         Container(
+                          //           margin: EdgeInsets.only(top: 3),
+                          //           height: 2,
+                          //           width: 55,
+                          //           color: Colors.orange,
+                          //         ),
+                          //     ],
+                          //   ),
+                          // )
                         ],
                       ),
-                      if (isSignupScreen) buildSignupMethad(context),
+                      if (isSignupScreen) buildSignimMethad(),
                       // if (!isSignupScreen)
                       if (!isSignupScreen) buildSignimMethad()
                     ],
@@ -184,28 +178,28 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
             ),
           ),
           buildButtonHalfContainer(false),
-          Positioned(
-            top: MediaQuery.of(context).size.height - 100,
-            left: 0,
-            right: 0,
-            child: Column(
-              children: [
-                Text(isSignupScreen ? "Or Signup with" : "Or Signin with"),
-                Container(
-                  margin: EdgeInsets.only(top: 15, left: 20, right: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      buildTextbutton(
-                          Icons.facebook, "Facebook", Palette.facebookColor),
-                      buildTextbutton(CommunityMaterialIcons.google_plus,
-                          "Google", Palette.googleColor),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
+          // Positioned(
+          //   top: MediaQuery.of(context).size.height - 100,
+          //   left: 0,
+          //   right: 0,
+          //   child: Column(
+          //     children: [
+          //       Text(isSignupScreen ? "Or Signup with" : "Or Signin with"),
+          //       Container(
+          //         margin: EdgeInsets.only(top: 15, left: 20, right: 20),
+          //         child: Row(
+          //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //           children: [
+          //             buildTextbutton(
+          //                 Icons.facebook, "Facebook", Palette.facebookColor),
+          //             buildTextbutton(CommunityMaterialIcons.google_plus,
+          //                 "Google", Palette.googleColor),
+          //           ],
+          //         ),
+          //       )
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
@@ -213,7 +207,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
 
   Container buildSignimMethad() {
     return Container(
-      margin: EdgeInsets.only(top: 20),
+      margin: EdgeInsets.only(top: 30),
       child: Column(
         children: [
           buildTextField(Icons.email_outlined, "Email", false, true),
@@ -221,27 +215,27 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Checkbox(
-                      value: isRememberMe,
-                      activeColor: Palette.textColor2,
-                      onChanged: (value) {
-                        setState(() {});
-                        isRememberMe = !isRememberMe;
-                      }),
-                  Text(
-                    "Remember Me",
-                    style: TextStyle(fontSize: 12, color: Palette.textColor1),
-                  )
-                ],
-              ),
-              TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Forgot Password",
-                    style: TextStyle(fontSize: 12, color: Palette.textColor1),
-                  ))
+              // Row(
+              //   children: [
+              //     Checkbox(
+              //         value: isRememberMe,
+              //         activeColor: Palette.textColor2,
+              //         onChanged: (value) {
+              //           setState(() {});
+              //           isRememberMe = !isRememberMe;
+              //         }),
+              //     Text(
+              //       "Remember Me",
+              //       style: TextStyle(fontSize: 12, color: Palette.textColor1),
+              //     )
+              //   ],
+              // ),
+              // TextButton(
+              //     onPressed: () {},
+              //     child: Text(
+              //       "Forgot Password",
+              //       style: TextStyle(fontSize: 12, color: Palette.textColor1),
+              //     ))
             ],
           )
         ],
@@ -254,7 +248,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
       margin: EdgeInsets.only(top: 15),
       child: Column(
         children: [
-          buildTextField(Icons.person, "User Name", false, false),
+          // buildTextField(Icons.person, "User Name", false, false),
           buildTextField(Icons.email_outlined, "Email", false, true),
           buildTextField(Icons.lock_outline, "Password", true, false),
           Padding(
@@ -393,9 +387,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
     return AnimatedPositioned(
       duration: Duration(milliseconds: 400),
       curve: Curves.linear,
-      top: isSignupScreen
-          ? MediaQuery.of(context).size.height * .70
-          : MediaQuery.of(context).size.height * .60,
+      top: MediaQuery.of(context).size.height * .63,
       right: 0,
       left: 0,
       child: Center(
@@ -419,35 +411,31 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
           child: !showShadow
               ? InkWell(
                   onTap: () {
-                    isSignupScreen ? print("Monu") : print("Joshi");
+                    Navigator.pushNamed(context, MyRouts.sidebarRout);
+                    print("Joshi");
                   },
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, MyRouts.sidebarRout);
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Colors.orange.shade200,
-                              Colors.orange.shade400,
-                            ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.orange.shade200,
+                            Colors.orange.shade400,
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(.3),
+                            spreadRadius: 1,
+                            blurRadius: 2,
+                            offset: Offset(0, 1),
                           ),
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(.3),
-                              spreadRadius: 1,
-                              blurRadius: 2,
-                              offset: Offset(0, 1),
-                            ),
-                          ]),
-                      child: Icon(
-                        Icons.arrow_forward,
-                        color: Colors.white,
-                      ),
+                        ]),
+                    child: Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
                     ),
                   ),
                 )

@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
+import 'package:first_work/widgts/themes.dart';
 import 'package:flutter/material.dart';
 
 import 'chack4.dart';
@@ -12,6 +13,7 @@ class MyADrawer extends StatefulWidget {
 }
 
 class _MyADrawerState extends State<MyADrawer> {
+  bool darkThemeEnabled = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -243,22 +245,38 @@ class _MyADrawerState extends State<MyADrawer> {
                         SizedBox(
                           height: 20,
                         ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.dark_mode,
-                              color: Colors.white,
-                              size: 22,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "Dark Theme",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 13),
-                            ),
-                          ],
+                        Expanded(
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.dark_mode,
+                                color: Colors.white,
+                                size: 22,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Expanded(
+                                child: Text(
+                                  "Dark Theme",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 13),
+                                ),
+                              ),
+                              Switch.adaptive(
+                                  activeColor:
+                                      Color.fromARGB(255, 135, 144, 221),
+                                  value: (false),
+                                  onChanged: (changedTheme) {
+                                    darkThemeEnabled = changedTheme;
+                                    setState(() {
+                                      darkThemeEnabled
+                                          ? MyThemes.darkTheme(context)
+                                          : MyThemes.lightTheme(context);
+                                    });
+                                  })
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: 20,

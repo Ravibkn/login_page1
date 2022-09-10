@@ -1,10 +1,11 @@
-import 'package:first_work/colors_constent.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'colors_constent.dart';
+
 // Style for title
 var mTitleStyle = GoogleFonts.inter(
-    fontWeight: FontWeight.w600, color: mTitleColor, fontSize: 12);
+    fontWeight: FontWeight.w700, color: mTitleColor, fontSize: 13);
 
 // Style for Discount Section
 var mMoreDiscountStyle = GoogleFonts.inter(
@@ -12,7 +13,7 @@ var mMoreDiscountStyle = GoogleFonts.inter(
 
 // Style for Service Section
 var mServiceTitleStyle = GoogleFonts.inter(
-    fontWeight: FontWeight.w500, fontSize: 12, color: mTitleColor);
+    fontWeight: FontWeight.bold, fontSize: 12, color: mTextStyle);
 var mServiceSubtitleStyle = GoogleFonts.inter(
     fontWeight: FontWeight.w400, fontSize: 10, color: mSubtitleColor);
 

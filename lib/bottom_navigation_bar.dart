@@ -9,10 +9,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:first_work/bloc/bloc_bloc.dart';
 
-import 'package:first_work/page1.dart';
-import 'package:first_work/page2.dart';
 import 'package:first_work/page4.dart';
-import 'package:first_work/page5.dart';
+import 'package:first_work/pages/profile.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -26,22 +24,22 @@ class NavBar extends StatefulWidget with NavigationStates {
 
 class _NavBarState extends State<NavBar> {
   final navigationkey = GlobalKey<CurvedNavigationBarState>();
-  int index = 2;
+  int index = 1;
   final screens = [
-    const Page1(),
-    const Page2(),
-    const HomePage(),
+    // const Page1(),
+    // const Page2(),
     const Page4(),
-    const Page5(),
+    const HomePage(),
+    const Profile(),
   ];
 
   @override
   Widget build(BuildContext context) {
     final items = [
-      Icon(Icons.search, size: 30),
-      Icon(Icons.settings, size: 30),
-      Icon(Icons.home, size: 30),
+      // Icon(Icons.search, size: 30),
+      // Icon(Icons.settings, size: 30),
       Icon(Icons.location_on, size: 30),
+      Icon(Icons.home, size: 30),
       Icon(Icons.person, size: 30),
     ];
     return Scaffold(
@@ -53,7 +51,7 @@ class _NavBarState extends State<NavBar> {
             .copyWith(iconTheme: IconThemeData(color: Colors.white)),
         child: CurvedNavigationBar(
           backgroundColor: Colors.transparent,
-          color: Theme.of(context).cardColor,
+          color: Colors.cyan,
           height: 60,
           animationCurve: Curves.linear,
           animationDuration: Duration(milliseconds: 600),
