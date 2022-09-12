@@ -11,7 +11,23 @@ class MyThemes {
         appBarTheme: AppBarTheme(
             color: Colors.white,
             elevation: 0,
-            iconTheme: IconThemeData(color: Colors.black),
+            // ignore: prefer_const_literals_to_create_immutables
+            iconTheme: IconThemeData(
+              color: Colors.white,
+              // ignore: prefer_const_literals_to_create_immutables
+              shadows: [
+                Shadow(
+                  offset: Offset(1.0, 1.0),
+                  blurRadius: 3.0,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
+                Shadow(
+                  offset: Offset(1.0, 1.0),
+                  blurRadius: 8.0,
+                  color: Color.fromARGB(124, 94, 94, 107),
+                ),
+              ],
+            ),
             toolbarTextStyle: Theme.of(context).textTheme.bodyText2,
             titleTextStyle: Theme.of(context).textTheme.headline6),
       );

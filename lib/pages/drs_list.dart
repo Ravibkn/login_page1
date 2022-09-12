@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:first_work/routs.dart';
 import 'package:flutter/material.dart';
 
 class DrsList extends StatefulWidget {
@@ -36,6 +39,27 @@ class _DrsListState extends State<DrsList> {
           ),
         )),
       ),
+      body: ListView(children: [
+        SizedBox(
+          height: 10,
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, MyRouts.drsAwbListRout);
+          },
+          child: Card(
+            color: Colors.grey.shade100,
+            child: ListTile(
+              leading: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("0/1"),
+              ),
+              title: Text("5S6W2"),
+              subtitle: Text("2021-12-09"),
+            ),
+          ),
+        )
+      ]),
     );
   }
 }

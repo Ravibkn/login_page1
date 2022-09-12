@@ -12,4 +12,6 @@ class MyRouts {
   static String pickupListRout = "/pickuplist";
   static String profileRout = "/profile";
   static String scanawbRout = "/scanawb";
+  static String drsAwbListRout = "/drsawblist";
+  static String drsDetallRout = "/drsDetall";
 }

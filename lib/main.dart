@@ -5,6 +5,8 @@ import 'package:first_work/bottom_navigation_bar.dart';
 import 'package:first_work/login_signup_screen.dart';
 import 'package:first_work/pages/drs_history.dart';
 import 'package:first_work/pages/drs_list.dart';
+import 'package:first_work/pages/drs_screens/drs_awb_list.dart';
+import 'package:first_work/pages/drs_screens/drs_detall.dart';
 import 'package:first_work/pages/pick_and_drop.dart';
 import 'package:first_work/pages/pick_drop_history.dart';
 import 'package:first_work/pages/pickup_history.dart';
@@ -52,6 +54,8 @@ class MyApp extends StatelessWidget {
         MyRouts.pickupListRout: (context) => PickupList(),
         MyRouts.profileRout: (context) => Profile(),
         MyRouts.scanawbRout: (context) => ScanAwb(),
+        MyRouts.drsAwbListRout: (context) => DrsAwbList(),
+        MyRouts.drsDetallRout: (context) => DrsDetall(),
       },
     );
   }

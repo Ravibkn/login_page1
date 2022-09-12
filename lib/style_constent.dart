@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,3 +38,35 @@ var mTravlogContentStyle = GoogleFonts.inter(
     fontSize: 10, fontWeight: FontWeight.w500, color: mTitleColor);
 var mTravlogPlaceStyle = GoogleFonts.inter(
     fontSize: 10, fontWeight: FontWeight.w500, color: mBlueColor);
+var mTextStyle1 = TextStyle(
+  color: Color.fromARGB(232, 34, 28, 28),
+  shadows: <Shadow>[
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 3.0,
+      color: Color.fromARGB(255, 248, 242, 242),
+    ),
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 8.0,
+      color: Color.fromARGB(124, 94, 94, 107),
+    ),
+  ],
+);
+var mTextStyle2 = TextStyle(
+  fontSize: 15,
+  fontWeight: FontWeight.bold,
+  color: Color.fromARGB(232, 34, 28, 28),
+  shadows: <Shadow>[
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 3.0,
+      color: Color.fromARGB(255, 248, 242, 242),
+    ),
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 8.0,
+      color: Color.fromARGB(124, 94, 94, 107),
+    ),
+  ],
+);
