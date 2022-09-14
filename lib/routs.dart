@@ -14,4 +14,5 @@ class MyRouts {
   static String scanawbRout = "/scanawb";
   static String drsAwbListRout = "/drsawblist";
   static String drsDetallRout = "/drsDetall";
+  static String updateDrsRout = "/updateDrs";
 }

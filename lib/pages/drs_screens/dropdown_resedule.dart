@@ -12,38 +12,34 @@ class DropDownResedule extends StatefulWidget {
 class _DropDownReseduleState extends State<DropDownResedule> {
   final items = [
     'Select Reasion',
-    'Miss-Routed',
-    'Customer Not Response',
-    'Cash Not Ready',
-    'Mobile Number Not Valid',
-    'Customer Refused To Accept',
-    'Reschedule'
+    'On Customer Request',
+    'Shipment Not Ready',
+    'Shipment Not Hand Over By Seller',
+    'The Seller Not allow To Chack Shipment',
   ];
   String? selectedItem = 'Select Reasion';
   @override
   Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(40),
-      child: SizedBox(
-        width: 250,
-        child: DropdownButton<String>(
-          underline: DropdownButtonHideUnderline(child: Container()),
-          borderRadius: BorderRadius.circular(15),
-          value: selectedItem,
-          items: items
-              .map((item) => DropdownMenuItem(
-                  value: item,
-                  child: Text(
-                    item,
-                    style: TextStyle(fontSize: 15),
-                  )))
-              .toList(),
-          onChanged: (item) {
-            setState(() {
-              selectedItem = item;
-            });
-          },
-        ),
+      child: DropdownButton<String>(
+        isExpanded: true,
+        underline: DropdownButtonHideUnderline(child: Container()),
+        borderRadius: BorderRadius.circular(15),
+        value: selectedItem,
+        items: items
+            .map((item) => DropdownMenuItem(
+                value: item,
+                child: Text(
+                  item,
+                  style: TextStyle(fontSize: 15),
+                )))
+            .toList(),
+        onChanged: (item) {
+          setState(() {
+            selectedItem = item;
+          });
+        },
       ),
     );
   }

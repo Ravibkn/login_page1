@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:first_work/pages/drs_screens/custom_text_input.dart';
+import 'package:first_work/routs.dart';
 import 'package:flutter/material.dart';
 
 import '../../style_constent.dart';
@@ -106,7 +107,9 @@ class _VerifayState extends State<Verifay> {
                                       borderRadius: BorderRadius.circular(30),
                                       side: BorderSide(
                                           color: Colors.grey.shade300)))),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, MyRouts.updateDrsRout);
+                      },
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15)),

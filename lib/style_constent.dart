@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'colors_constent.dart';
@@ -62,6 +62,68 @@ var mTextStyle2 = TextStyle(
       offset: Offset(2.0, 2.0),
       blurRadius: 3.0,
       color: Color.fromARGB(255, 248, 242, 242),
+    ),
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 8.0,
+      color: Color.fromARGB(124, 94, 94, 107),
+    ),
+  ],
+);
+
+var mTextStyleHeader = TextStyle(
+  // fontSize: 15,
+  fontWeight: FontWeight.bold,
+  color: Color.fromARGB(232, 255, 255, 255),
+  shadows: <Shadow>[
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 3.0,
+      color: Color.fromARGB(255, 0, 0, 0),
+    ),
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 8.0,
+      color: Color.fromARGB(124, 94, 94, 107),
+    ),
+  ],
+);
+var mTextStyleButton = TextStyle(
+  fontSize: 17,
+  fontWeight: FontWeight.bold,
+  color: Color.fromARGB(232, 255, 255, 255),
+  shadows: <Shadow>[
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 3.0,
+      color: Color.fromARGB(255, 0, 0, 0),
+    ),
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 8.0,
+      color: Color.fromARGB(124, 94, 94, 107),
+    ),
+  ],
+);
+
+var mButtonStyle = ButtonStyle(
+    backgroundColor: MaterialStateProperty.all(Colors.cyan),
+    minimumSize: MaterialStateProperty.all(
+      Size(130, 40),
+    ),
+    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(color: Colors.white))));
+
+var mTextformfield = TextStyle(
+  // fontSize: 15,
+  fontWeight: FontWeight.bold,
+  color: Color.fromARGB(232, 187, 179, 179),
+  shadows: <Shadow>[
+    Shadow(
+      offset: Offset(2.0, 2.0),
+      blurRadius: 3.0,
+      color: Color.fromARGB(255, 0, 0, 0),
     ),
     Shadow(
       offset: Offset(2.0, 2.0),

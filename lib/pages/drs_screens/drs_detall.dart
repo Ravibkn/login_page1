@@ -6,6 +6,8 @@ import 'package:first_work/pages/drs_screens/verifay.dart';
 import 'package:first_work/style_constent.dart';
 import 'package:flutter/material.dart';
 
+import 'date_picker.dart';
+
 enum Auth {
   deliver,
   undeliver,
@@ -610,15 +612,30 @@ class _DrsDetallState extends State<DrsDetall> {
               if (_auth == Auth.reshdule)
                 Form(
                   key: _reshduleFormKey,
-                  child: Container(
-                      decoration: BoxDecoration(color: Colors.white),
-                      width: 340,
-                      child: Row(
+                  child: Column(
+                    children: [
+                      Row(
                         children: [
-                          DropDownResedule(),
-                          ElevatedButton(onPressed: () {}, child: Text("55"))
+                          Container(
+                            width: 340,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: DropDownResedule(),
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                  color: Colors.grey.shade300, width: 2),
+                            ),
+                          ),
                         ],
-                      )),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      DatePickker()
+                    ],
+                  ),
                 ),
               if (_auth == Auth.undeliver)
                 Form(
