@@ -1,42 +1,27 @@
-// ignore_for_file: sort_child_properties_last, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: sort_child_properties_last
 
+import 'package:first_work/colors_constent.dart';
 import 'package:first_work/components/custom_button.dart';
-import 'package:first_work/pages/drs_screens/dropdown.dart';
-import 'package:first_work/pages/drs_screens/dropdown_resedule.dart';
-import 'package:first_work/pages/drs_screens/verifay.dart';
-import 'package:first_work/style_constent.dart';
 import 'package:flutter/material.dart';
 
-import 'date_picker.dart';
+import '../../style_constent.dart';
 
-enum Auth {
-  deliver,
-  undeliver,
-  reshdule,
-  nulls,
-}
-
-class DrsDetall extends StatefulWidget {
-  const DrsDetall({Key? key}) : super(key: key);
+class DrsDetallHistory extends StatefulWidget {
+  const DrsDetallHistory({Key? key}) : super(key: key);
 
   @override
-  State<DrsDetall> createState() => _DrsDetallState();
+  State<DrsDetallHistory> createState() => _DrsDetallHistoryState();
 }
 
-class _DrsDetallState extends State<DrsDetall> {
-  Auth _auth = Auth.nulls;
-  final _delivaryFormKey = GlobalKey<FormState>();
-  final _undelivaryFormKey = GlobalKey<FormState>();
-  final _reshduleFormKey = GlobalKey<FormState>();
-
+class _DrsDetallHistoryState extends State<DrsDetallHistory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.only(left: 55.0),
-          child: const Text(
-            "Drs Detall",
+        title: const Padding(
+          padding: EdgeInsets.only(left: 55.0),
+          child: Text(
+            "Drs Detall History",
             style: TextStyle(
               shadows: <Shadow>[
                 Shadow(
@@ -70,7 +55,7 @@ class _DrsDetallState extends State<DrsDetall> {
                         height: 35,
                         decoration: BoxDecoration(
                             color: Colors.grey.shade300,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(
                                   15,
                                 ),
@@ -88,7 +73,8 @@ class _DrsDetallState extends State<DrsDetall> {
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              // ignore: prefer_const_literals_to_create_immutables
+                              children: const [
                                 Text(
                                   "AWB No",
                                   style: TextStyle(
@@ -103,12 +89,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 )
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Nane",
                                   style: TextStyle(fontSize: 15),
@@ -119,12 +105,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 )
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Email",
                                   style: TextStyle(fontSize: 15),
@@ -135,18 +121,18 @@ class _DrsDetallState extends State<DrsDetall> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Mobile No",
                                   style: TextStyle(fontSize: 15),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 50.0),
+                                  padding: EdgeInsets.only(left: 50.0),
                                   child: Icon(Icons.call),
                                 ),
                                 Text(
@@ -155,12 +141,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Address",
                                   style: TextStyle(fontSize: 15),
@@ -194,7 +180,7 @@ class _DrsDetallState extends State<DrsDetall> {
                         height: 35,
                         decoration: BoxDecoration(
                             color: Colors.grey.shade300,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(
                                   15,
                                 ),
@@ -212,7 +198,7 @@ class _DrsDetallState extends State<DrsDetall> {
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Name",
                                   style: TextStyle(
@@ -227,12 +213,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 )
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Email",
                                   style: TextStyle(fontSize: 15),
@@ -243,12 +229,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 )
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Mobile",
                                   style: TextStyle(fontSize: 15),
@@ -259,12 +245,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Address",
                                   style: TextStyle(fontSize: 15),
@@ -298,7 +284,7 @@ class _DrsDetallState extends State<DrsDetall> {
                         height: 35,
                         decoration: BoxDecoration(
                             color: Colors.grey.shade300,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(
                                   15,
                                 ),
@@ -316,7 +302,7 @@ class _DrsDetallState extends State<DrsDetall> {
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Booking-Type",
                                   style: TextStyle(
@@ -331,12 +317,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 )
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Cod Amount",
                                   style: TextStyle(fontSize: 15),
@@ -347,12 +333,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 )
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Service Charge",
                                   style: TextStyle(fontSize: 15),
@@ -363,12 +349,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Total Amount",
                                   style: TextStyle(fontSize: 15),
@@ -402,7 +388,7 @@ class _DrsDetallState extends State<DrsDetall> {
                         height: 35,
                         decoration: BoxDecoration(
                             color: Colors.grey.shade300,
-                            borderRadius: BorderRadius.only(
+                            borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(
                                   15,
                                 ),
@@ -420,7 +406,7 @@ class _DrsDetallState extends State<DrsDetall> {
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "AWB No",
                                   style: TextStyle(
@@ -435,12 +421,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 )
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Booking Date/",
                                   style: TextStyle(fontSize: 15),
@@ -451,12 +437,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 )
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Time",
                                   style: TextStyle(fontSize: 15),
@@ -467,12 +453,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Parcel Description Weight",
                                   style: TextStyle(fontSize: 15),
@@ -483,12 +469,12 @@ class _DrsDetallState extends State<DrsDetall> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   "Shipment Type",
                                   style: TextStyle(fontSize: 15),
@@ -499,17 +485,33 @@ class _DrsDetallState extends State<DrsDetall> {
                                 ),
                               ],
                             ),
-                            // Divider(
-                            //   indent: 0,
-                            //   endIndent: 0,
-                            //   thickness: 2,
-                            // ),
+                            const Divider(
+                              indent: 0,
+                              endIndent: 0,
+                              thickness: 2,
+                            ),
                           ],
                         ),
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.only(right: 65.0),
+                            child: Text(
+                              "Shipment-Status",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Text(
+                            "Delivered",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
                     ],
                   ),
-                  height: 190,
+                  height: 240,
                   width: 400,
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300, width: 2),
@@ -517,150 +519,133 @@ class _DrsDetallState extends State<DrsDetall> {
                       borderRadius: BorderRadius.circular(17)),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Container(
-                height: 50,
-                width: 340,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: Colors.grey.shade300, width: 2),
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Radio(
-                              value: Auth.deliver,
-                              activeColor: Colors.cyan,
-                              groupValue: _auth,
-                              onChanged: (Auth? val) {
-                                setState(() {
-                                  _auth = val!;
-                                });
-                              }),
-                          Expanded(
-                            child: Text(
-                              'Deliver',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Radio(
-                              value: Auth.undeliver,
-                              activeColor: Colors.cyan,
-                              groupValue: _auth,
-                              onChanged: (Auth? val) {
-                                setState(() {
-                                  _auth = val!;
-                                });
-                              }),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(right: 2.0),
-                              child: Text(
-                                'Undeliver',
-                                style: TextStyle(fontSize: 12),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 400,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade300,
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(
+                                  15,
+                                ),
+                                topRight: Radius.circular(15))),
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              const Text(
+                                "Map",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
                               ),
-                            ),
+                              CustomButton(text: "Get Diraction", onTap: () {})
+                            ],
                           ),
-                        ],
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          Radio(
-                              value: Auth.reshdule,
-                              activeColor: Colors.cyan,
-                              groupValue: _auth,
-                              onChanged: (Auth? val) {
-                                setState(() {
-                                  _auth = val!;
-                                });
-                              }),
-                          Expanded(
-                            child: Text(
-                              'Reshedule',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
+                  height: 350,
+                  width: 400,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey.shade300, width: 2),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(17)),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              if (_auth == Auth.deliver)
-                Form(
-                  key: _delivaryFormKey,
-                  child: Column(
-                    children: [
-                      Verifay(),
-                    ],
-                  ),
-                ),
-              if (_auth == Auth.reshdule)
-                Form(
-                  key: _reshduleFormKey,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
                   child: Column(
                     children: [
                       Container(
-                        width: 340,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 16.0),
-                          child: DropDownResedule(),
-                        ),
+                        width: 400,
+                        height: 50,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border:
-                              Border.all(color: Colors.grey.shade300, width: 2),
+                            color: Colors.grey.shade300,
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(
+                                  15,
+                                ),
+                                topRight: Radius.circular(15))),
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              const Text(
+                                "Map",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
+                              ),
+                              CustomButton(text: "Get Diraction", onTap: () {})
+                            ],
+                          ),
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      DatePickker()
                     ],
                   ),
+                  height: 350,
+                  width: 400,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey.shade300, width: 2),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(17)),
                 ),
-              if (_auth == Auth.undeliver)
-                Form(
-                  key: _undelivaryFormKey,
+              ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
                   child: Column(
                     children: [
                       Container(
-                        width: 340,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: DropDown(),
-                        ),
+                        width: 400,
+                        height: 50,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border:
-                              Border.all(color: Colors.grey.shade300, width: 2),
+                            color: Colors.grey.shade300,
+                            borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(
+                                  15,
+                                ),
+                                topRight: Radius.circular(15))),
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              const Text(
+                                "Map",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
+                              ),
+                              CustomButton(text: "Get Diraction", onTap: () {})
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CustomButton(
-                        text: "Update Drs",
-                        onTap: () {},
                       ),
                     ],
                   ),
+                  height: 350,
+                  width: 400,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey.shade300, width: 2),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(17)),
                 ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ],

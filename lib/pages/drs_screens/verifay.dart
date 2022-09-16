@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:first_work/components/custom_button.dart';
 import 'package:first_work/pages/drs_screens/custom_text_input.dart';
 import 'package:first_work/routs.dart';
 import 'package:flutter/material.dart';
@@ -97,31 +98,11 @@ class _VerifayState extends State<Verifay> {
                 if (_auth == Auth.boyrisk)
                   Form(
                     key: _boyFormKey,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.cyan),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                      side: BorderSide(
-                                          color: Colors.grey.shade300)))),
-                      onPressed: () {
-                        Navigator.pushNamed(context, MyRouts.updateDrsRout);
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15)),
-                        height: 45,
-                        width: 100,
-                        alignment: Alignment.center,
-                        child: Text(
-                          "Update Drs",
-                          style: TextStyle(fontSize: 17),
-                        ),
-                      ),
-                    ),
+                    child: CustomButton(
+                        text: "Update Drs",
+                        onTap: () {
+                          Navigator.pushNamed(context, MyRouts.updateDrsRout);
+                        }),
                   ),
               ],
             )

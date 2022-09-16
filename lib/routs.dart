@@ -15,4 +15,7 @@ class MyRouts {
   static String drsAwbListRout = "/drsawblist";
   static String drsDetallRout = "/drsDetall";
   static String updateDrsRout = "/updateDrs";
+  static String photoPageRout = "/photopage";
+  static String drsHistoryAwbrout = "/drsHistoryawb";
+  static String drsDetallHistoryRout = "/drsdetallhistory";
 }

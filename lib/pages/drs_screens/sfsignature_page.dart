@@ -2,9 +2,12 @@
 
 import 'dart:typed_data';
 
+import 'package:first_work/pages/drs_screens/photo_page.dart';
+import 'package:first_work/routs.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_signaturepad/signaturepad.dart';
 
+import '../../components/custom_button.dart';
 import '../../style_constent.dart';
 import 'custom_text_form_field.dart';
 import 'package:universal_html/html.dart' show AnchorElement;
@@ -31,10 +34,15 @@ class _SfSignnatureState extends State<SfSignnature> {
       appBar: AppBar(
         backgroundColor: Colors.cyan,
         title: Center(
-          child: Text("Update Drs", style: mTextStyleHeader),
+          child: Padding(
+            padding: const EdgeInsets.only(right: 28.0),
+            child: Text("Update Drs", style: mTextStyleHeader),
+          ),
         ),
       ),
       body: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+        primary: false,
         child: Padding(
           padding: const EdgeInsets.only(top: 8.0, left: 10, right: 10),
           child: Column(
@@ -80,51 +88,40 @@ class _SfSignnatureState extends State<SfSignnature> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ElevatedButton(
-                    onPressed: () async {
-                      ui.Image image =
-                          await _signnaturePadKeyState.currentState!.toImage();
-                      final byteData = await image.toByteData(
-                          format: ui.ImageByteFormat.png);
-                      final Uint8List imageByts = byteData!.buffer.asUint8List(
-                          byteData.offsetInBytes, byteData.lengthInBytes);
+                  CustomButton(
+                      text: "Save",
+                      onTap: () async {
+                        ui.Image image = await _signnaturePadKeyState
+                            .currentState!
+                            .toImage();
+                        final byteData = await image.toByteData(
+                            format: ui.ImageByteFormat.png);
+                        final Uint8List imageByts = byteData!.buffer
+                            .asUint8List(
+                                byteData.offsetInBytes, byteData.lengthInBytes);
 
-                      final String path =
-                          (await getApplicationSupportDirectory()).path;
-                      final String filename = '$path/Output.png';
-                      final File file = File(filename);
-                      await file.writeAsBytes(imageByts, flush: true);
-                      OpenFile.open(filename);
-                    },
-                    child: Text(
-                      "Save",
-                      style: mTextStyleButton,
-                    ),
-                    style: mButtonStyle,
-                  ),
-                  ElevatedButton(
-                    onPressed: () async {
-                      _signnaturePadKeyState.currentState!.clear();
-                    },
-                    child: Text(
-                      "Reset",
-                      style: mTextStyleButton,
-                    ),
-                    style: mButtonStyle,
-                  )
+                        final String path =
+                            (await getApplicationSupportDirectory()).path;
+                        final String filename = '$path/Output.png';
+                        final File file = File(filename);
+                        await file.writeAsBytes(imageByts, flush: true);
+                        OpenFile.open(filename);
+                      }),
+                  CustomButton(
+                      text: "Reset",
+                      onTap: () async {
+                        _signnaturePadKeyState.currentState!.clear();
+                      })
                 ],
               ),
               SizedBox(
                 height: 10,
               ),
-              ElevatedButton(
-                style: mButtonStyle,
-                onPressed: () {},
-                child: Text(
-                  "Take Photo",
-                  style: mTextStyleButton,
-                ),
-              ),
+              CustomButton(
+                  text: "Photo",
+                  onTap: () {
+                    Navigator.pushNamed(context, MyRouts.photoPageRout);
+                  }),
               SizedBox(
                 height: 10,
               ),
@@ -136,13 +133,9 @@ class _SfSignnatureState extends State<SfSignnature> {
               SizedBox(
                 height: 10,
               ),
-              ElevatedButton(
-                style: mButtonStyle,
-                onPressed: () {},
-                child: Text(
-                  "Deliver Drs",
-                  style: mTextStyleButton,
-                ),
+              CustomButton(
+                text: "Deliver Drs",
+                onTap: () {},
               ),
             ],
           ),

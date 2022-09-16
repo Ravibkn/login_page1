@@ -1,23 +1,19 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
+import 'package:first_work/routs.dart';
 import 'package:flutter/material.dart';
 
-class DrsHistory extends StatefulWidget {
+class DrsHistory extends StatelessWidget {
   const DrsHistory({Key? key}) : super(key: key);
 
-  @override
-  State<DrsHistory> createState() => _DrsHistoryState();
-}
-
-class _DrsHistoryState extends State<DrsHistory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.cyan,
-        title: Center(
+        title: const Center(
             child: Padding(
-          padding: const EdgeInsets.only(right: 40.0),
+          padding: EdgeInsets.only(right: 40.0),
           child: Text(
             "Drs History",
             style: TextStyle(
@@ -38,6 +34,27 @@ class _DrsHistoryState extends State<DrsHistory> {
           ),
         )),
       ),
+      body: ListView(children: [
+        SizedBox(
+          height: 10,
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, MyRouts.drsHistoryAwbrout);
+          },
+          child: Card(
+            color: Colors.grey.shade100,
+            child: ListTile(
+              leading: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("0/1"),
+              ),
+              title: Text("5S6W2"),
+              subtitle: Text("2021-12-09"),
+            ),
+          ),
+        )
+      ]),
     );
   }
 }

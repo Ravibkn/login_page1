@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_new, sort_child_properties_last
 
+import 'package:first_work/components/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class OTPInput extends StatefulWidget {
@@ -28,24 +29,9 @@ class _OTPInputState extends State<OTPInput> {
             ),
           ),
         ),
-        ElevatedButton(
-          style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.cyan),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      side: BorderSide(color: Colors.grey.shade300)))),
-          onPressed: () {},
-          child: Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-            height: 45,
-            width: 80,
-            alignment: Alignment.center,
-            child: Text(
-              "Submit",
-              style: TextStyle(fontSize: 17),
-            ),
-          ),
+        CustomButton(
+          text: "Submit",
+          onTap: () {},
         ),
       ]),
     );

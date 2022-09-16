@@ -3,10 +3,13 @@
 import 'package:first_work/app.dart';
 import 'package:first_work/bottom_navigation_bar.dart';
 import 'package:first_work/login_signup_screen.dart';
-import 'package:first_work/pages/drs_history.dart';
+import 'package:first_work/pages/drs%20history%20page/drs_awb_list.dart';
+import 'package:first_work/pages/drs%20history%20page/drs_history_detall.dart';
+
 import 'package:first_work/pages/drs_list.dart';
 import 'package:first_work/pages/drs_screens/drs_awb_list.dart';
 import 'package:first_work/pages/drs_screens/drs_detall.dart';
+import 'package:first_work/pages/drs_screens/photo_page.dart';
 import 'package:first_work/pages/drs_screens/sfsignature_page.dart';
 import 'package:first_work/pages/pick_and_drop.dart';
 import 'package:first_work/pages/pick_drop_history.dart';
@@ -21,6 +24,8 @@ import 'package:first_work/widgts/themes.dart';
 // import 'package:first_work/login_signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'pages/drs history page/drs_history.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -58,6 +63,9 @@ class MyApp extends StatelessWidget {
         MyRouts.drsAwbListRout: (context) => DrsAwbList(),
         MyRouts.drsDetallRout: (context) => DrsDetall(),
         MyRouts.updateDrsRout: (context) => SfSignnature(),
+        MyRouts.photoPageRout: (context) => PhotoPage(),
+        MyRouts.drsHistoryAwbrout: (context) => DrsAwbHistory(),
+        MyRouts.drsDetallHistoryRout: (context) => DrsDetallHistory(),
       },
     );
   }
