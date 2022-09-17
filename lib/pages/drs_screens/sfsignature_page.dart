@@ -2,7 +2,7 @@
 
 import 'dart:typed_data';
 
-import 'package:first_work/pages/drs_screens/photo_page.dart';
+// import 'package:first_work/pages/drs_screens/photo_page.dart';
 import 'package:first_work/routs.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_signaturepad/signaturepad.dart';
@@ -10,9 +10,9 @@ import 'package:syncfusion_flutter_signaturepad/signaturepad.dart';
 import '../../components/custom_button.dart';
 import '../../style_constent.dart';
 import 'custom_text_form_field.dart';
-import 'package:universal_html/html.dart' show AnchorElement;
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'dart:convert';
+// import 'package:universal_html/html.dart' show AnchorElement;
+// import 'package:flutter/foundation.dart' show kIsWeb;
+// import 'dart:convert';
 import 'dart:ui' as ui;
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';

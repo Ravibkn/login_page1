@@ -38,7 +38,7 @@ class _NavBarState extends State<NavBar> {
     final items = [
       // Icon(Icons.search, size: 30),
       // Icon(Icons.settings, size: 30),
-      Icon(Icons.location_on, size: 30),
+      Icon(Icons.mobile_friendly, size: 30),
       Icon(Icons.home, size: 30),
       Icon(Icons.person, size: 30),
     ];

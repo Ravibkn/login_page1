@@ -1,12 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, sized_box_for_whitespace
 
-import 'package:first_work/bloc/bloc_bloc.dart';
 import 'package:first_work/colors_constent.dart';
 import 'package:first_work/routs.dart';
 import 'package:first_work/style_constent.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget with NavigationStates {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -19,40 +18,26 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        child: AppBar(
-          elevation: 2,
-          title: Center(
-              child: Text(
-            "Driver App",
-            style: TextStyle(
-              shadows: <Shadow>[
-                Shadow(
-                  offset: Offset(2.0, 2.0),
-                  blurRadius: 3.0,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                ),
-                Shadow(
-                  offset: Offset(2.0, 2.0),
-                  blurRadius: 8.0,
-                  color: Color.fromARGB(124, 94, 94, 107),
-                ),
-              ],
-              color: Colors.white,
+      appBar: AppBar(
+        title: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 50.0),
+            child: Text(
+              "Driver App",
+              style: mTextStyleHeader,
             ),
-          )),
-          automaticallyImplyLeading: false,
-          backgroundColor: Colors.cyan,
+          ),
         ),
-        preferredSize: Size.fromHeight(30.0),
+        backgroundColor: Colors.cyan,
       ),
+      drawer: Drawer(),
       body: Container(
         color: Colors.white,
         child: ListView(
           physics: const ClampingScrollPhysics(),
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 70, top: 20),
+              padding: const EdgeInsets.only(left: 70),
               child: Text(
                 "",
                 style: TextStyle(
@@ -612,7 +597,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      // drawer: const Drawer()
     );
   }
 }

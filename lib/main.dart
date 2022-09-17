@@ -2,6 +2,7 @@
 
 import 'package:first_work/app.dart';
 import 'package:first_work/bottom_navigation_bar.dart';
+import 'package:first_work/home_page.dart';
 import 'package:first_work/login_signup_screen.dart';
 import 'package:first_work/pages/drs%20history%20page/drs_awb_list.dart';
 import 'package:first_work/pages/drs%20history%20page/drs_history_detall.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
         MyRouts.photoPageRout: (context) => PhotoPage(),
         MyRouts.drsHistoryAwbrout: (context) => DrsAwbHistory(),
         MyRouts.drsDetallHistoryRout: (context) => DrsDetallHistory(),
+        MyRouts.homeScreenRout: (context) => HomePage(),
       },
     );
   }

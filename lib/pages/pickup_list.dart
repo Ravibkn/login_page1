@@ -38,6 +38,7 @@ class _PickupListState extends State<PickupList> {
           ),
         )),
       ),
+      drawer: Drawer(),
     );
   }
 }

@@ -411,7 +411,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
           child: !showShadow
               ? InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, MyRouts.sidebarRout);
+                    Navigator.pushNamed(context, MyRouts.bottomBarRout);
                     print("Joshi");
                   },
                   child: Container(

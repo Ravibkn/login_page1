@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:first_work/components/custom_button.dart';
+import 'package:first_work/style_constent.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class ScanAwb extends StatefulWidget {
   const ScanAwb({Key? key}) : super(key: key);
@@ -10,33 +13,36 @@ class ScanAwb extends StatefulWidget {
 }
 
 class _ScanAwbState extends State<ScanAwb> {
+  String _data = "0";
+  _scan() async {
+    await FlutterBarcodeScanner.scanBarcode(
+            "#000000", "Cancel", true, ScanMode.BARCODE)
+        .then((value) => setState(() => _data = value));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.cyan,
         title: Center(
-            child: Padding(
-          padding: const EdgeInsets.only(right: 40.0),
-          child: Text(
-            "Scan AWB",
-            style: TextStyle(
-              shadows: <Shadow>[
-                Shadow(
-                  offset: Offset(2.0, 2.0),
-                  blurRadius: 3.0,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                ),
-                Shadow(
-                  offset: Offset(2.0, 2.0),
-                  blurRadius: 8.0,
-                  color: Color.fromARGB(124, 94, 94, 107),
-                ),
-              ],
-              color: Colors.white,
-            ),
+          child: Padding(
+            padding: const EdgeInsets.only(right: 40.0),
+            child: Text("Scan AWB", style: mTextStyleHeader),
           ),
-        )),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomButton(
+              text: "Scan Awb Barcode",
+              onTap: () => _scan(),
+            ),
+            Text(_data),
+          ],
+        ),
       ),
     );
   }

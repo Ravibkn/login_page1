@@ -18,4 +18,5 @@ class MyRouts {
   static String photoPageRout = "/photopage";
   static String drsHistoryAwbrout = "/drsHistoryawb";
   static String drsDetallHistoryRout = "/drsdetallhistory";
+  static String homeScreenRout = "/homescreen";
 }

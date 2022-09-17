@@ -1,9 +1,9 @@
 // ignore_for_file: sort_child_properties_last
 
-import 'package:first_work/colors_constent.dart';
 import 'package:first_work/components/custom_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../components/custom_Container.dart';
 import '../../style_constent.dart';
 
 class DrsDetallHistory extends StatefulWidget {
@@ -18,26 +18,10 @@ class _DrsDetallHistoryState extends State<DrsDetallHistory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Padding(
-          padding: EdgeInsets.only(left: 55.0),
-          child: Text(
-            "Drs Detall History",
-            style: TextStyle(
-              shadows: <Shadow>[
-                Shadow(
-                  offset: Offset(2.0, 2.0),
-                  blurRadius: 3.0,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                ),
-                Shadow(
-                  offset: Offset(2.0, 2.0),
-                  blurRadius: 8.0,
-                  color: Color.fromARGB(124, 94, 94, 107),
-                ),
-              ],
-              color: Colors.white,
-            ),
-          ),
+        title: Padding(
+          padding: const EdgeInsets.only(left: 0.0),
+          child: Center(
+              child: Text("Drs Detall History", style: mTextStyleHeader)),
         ),
         backgroundColor: Colors.cyan,
       ),
@@ -541,11 +525,7 @@ class _DrsDetallHistoryState extends State<DrsDetallHistory> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              const Text(
-                                "Map",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20),
-                              ),
+                              Text("Map", style: mTextStyle2),
                               CustomButton(text: "Get Diraction", onTap: () {})
                             ],
                           ),
@@ -564,87 +544,10 @@ class _DrsDetallHistoryState extends State<DrsDetallHistory> {
               const SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 400,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade300,
-                            borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(
-                                  15,
-                                ),
-                                topRight: Radius.circular(15))),
-                        child: Center(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              const Text(
-                                "Map",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20),
-                              ),
-                              CustomButton(text: "Get Diraction", onTap: () {})
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  height: 350,
-                  width: 400,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.shade300, width: 2),
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(17)),
-                ),
+              const CustomContenar(text: "Photo",
               ),
-              const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 400,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade300,
-                            borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(
-                                  15,
-                                ),
-                                topRight: Radius.circular(15))),
-                        child: Center(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              const Text(
-                                "Map",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20),
-                              ),
-                              CustomButton(text: "Get Diraction", onTap: () {})
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  height: 350,
-                  width: 400,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.shade300, width: 2),
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(17)),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
+              const CustomContenar(
+                text: "Signature",
               ),
             ],
           ),
