@@ -14,8 +14,11 @@ import 'package:first_work/pages/drs_screens/photo_page.dart';
 import 'package:first_work/pages/drs_screens/sfsignature_page.dart';
 import 'package:first_work/pages/pick_and_drop.dart';
 import 'package:first_work/pages/pick_drop_history.dart';
-import 'package:first_work/pages/pickup_history.dart';
-import 'package:first_work/pages/pickup_list.dart';
+import 'package:first_work/pages/pickup%20history%20pages/pickup_awb_page.dart';
+import 'package:first_work/pages/pickup%20history%20pages/pickup_detall_history.dart';
+import 'package:first_work/pages/pickup%20list%20page/pickup_awb_pic.dart';
+import 'package:first_work/pages/pickup%20history%20pages/pickup_history.dart';
+import 'package:first_work/pages/pickup%20list%20page/pickup_list.dart';
 import 'package:first_work/pages/profile.dart';
 import 'package:first_work/pages/scan_awb.dart';
 import 'package:first_work/routs.dart';
@@ -68,6 +71,9 @@ class MyApp extends StatelessWidget {
         MyRouts.drsHistoryAwbrout: (context) => DrsAwbHistory(),
         MyRouts.drsDetallHistoryRout: (context) => DrsDetallHistory(),
         MyRouts.homeScreenRout: (context) => HomePage(),
+        MyRouts.pickupawbupdatedaterout: (context) => PickupAwbUpdate(),
+        MyRouts.pickupawbhistoryrout: (context) => PickupAwbHistory(),
+        MyRouts.pickupdetallHistoryrout: (context) => PickupDetallHistory(),
       },
     );
   }

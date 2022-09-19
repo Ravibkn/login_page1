@@ -19,4 +19,7 @@ class MyRouts {
   static String drsHistoryAwbrout = "/drsHistoryawb";
   static String drsDetallHistoryRout = "/drsdetallhistory";
   static String homeScreenRout = "/homescreen";
+  static String pickupawbupdatedaterout = "/pickupawbupdate";
+  static String pickupawbhistoryrout = "/pickupawbhistory";
+  static String pickupdetallHistoryrout = "/pickupdetallhistory";
 }

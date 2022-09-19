@@ -8,9 +8,11 @@
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:first_work/bloc/bloc_bloc.dart';
+import 'package:first_work/components/mydrawer.dart';
 
-import 'package:first_work/page4.dart';
+import 'package:first_work/pages/drs_list.dart';
 import 'package:first_work/pages/profile.dart';
+import 'package:first_work/style_constent.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -28,7 +30,7 @@ class _NavBarState extends State<NavBar> {
   final screens = [
     // const Page1(),
     // const Page2(),
-    const Page4(),
+    const DrsList(),
     const HomePage(),
     const Profile(),
   ];
@@ -38,11 +40,27 @@ class _NavBarState extends State<NavBar> {
     final items = [
       // Icon(Icons.search, size: 30),
       // Icon(Icons.settings, size: 30),
-      Icon(Icons.mobile_friendly, size: 30),
+      Image.asset(
+        "images/drslist2.png",
+        scale: 7,
+      ),
       Icon(Icons.home, size: 30),
       Icon(Icons.person, size: 30),
     ];
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.cyan,
+        title: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 48.0),
+            child: Text(
+              "Driver App",
+              style: mTextStyleHeader,
+            ),
+          ),
+        ),
+      ),
+      drawer: MySidebar(),
       extendBody: true,
       backgroundColor: Color.fromARGB(237, 223, 180, 213),
       body: screens[index],

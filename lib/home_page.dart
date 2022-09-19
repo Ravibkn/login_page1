@@ -5,6 +5,7 @@ import 'package:first_work/routs.dart';
 import 'package:first_work/style_constent.dart';
 import 'package:flutter/material.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -18,19 +19,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Padding(
-            padding: const EdgeInsets.only(right: 50.0),
-            child: Text(
-              "Driver App",
-              style: mTextStyleHeader,
-            ),
-          ),
-        ),
-        backgroundColor: Colors.cyan,
-      ),
-      drawer: Drawer(),
+      // appBar: AppBar(
+      //   title: Center(
+      //     child: Padding(
+      //       padding: const EdgeInsets.only(right: 50.0),
+      //       child: Text(
+      //         "Driver App",
+      //         style: mTextStyleHeader,
+      //       ),
+      //     ),
+      //   ),
+      //   backgroundColor: Colors.cyan,
+      // ),
+      // drawer: MySidebar(),
       body: Container(
         color: Colors.white,
         child: ListView(
