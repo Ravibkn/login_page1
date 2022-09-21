@@ -5,7 +5,6 @@ import 'package:first_work/routs.dart';
 import 'package:first_work/style_constent.dart';
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -37,15 +36,7 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           physics: const ClampingScrollPhysics(),
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 70),
-              child: Text(
-                "",
-                style: TextStyle(
-                  color: Theme.of(context).cardColor,
-                ),
-              ),
-            ),
+            Padding(padding: EdgeInsets.only(top: 80)),
             // InkWell(
             //   onTap: () {
             //     print("Profile");
@@ -76,122 +67,122 @@ class _HomePageState extends State<HomePage> {
             //   ),
             // ),
 
-            Padding(
-              padding: const EdgeInsets.only(left: 16, top: 10, bottom: 12),
-              child: Center(
-                child: Text(
-                  "Pick & Drop History",
-                  style: mTitleStyle,
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 16, top: 10, bottom: 12),
+            //   child: Center(
+            //     child: Text(
+            //       "Pick & Drop History",
+            //       style: mTitleStyle,
+            //     ),
+            //   ),
+            // ),
 
-            Container(
-              color: Colors.white,
-              height: 80,
-              margin: const EdgeInsets.only(left: 16, right: 16),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, MyRouts.pickandDropRout);
-                          },
-                          child: Container(
-                            margin: const EdgeInsets.only(right: 8),
-                            padding: const EdgeInsets.only(left: 16),
-                            height: 64,
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                    blurRadius: 5,
-                                    spreadRadius: .2,
-                                    color: Colors.grey)
-                              ],
-                              color: Colors.cyan,
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: mBorderColor, width: 1),
-                            ),
-                            child: Row(
-                              children: [
-                                Image.asset("images/distance.png",
-                                    scale: 15, color: mIconeColor),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "Pick & Drop",
-                                        style: mServiceTitleStyle,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, MyRouts.pickandDropHistoryRout);
-                          },
-                          child: Container(
-                            margin: const EdgeInsets.only(right: 8),
-                            padding: const EdgeInsets.only(left: 16),
-                            height: 64,
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                    blurRadius: 5,
-                                    spreadRadius: .2,
-                                    color: Colors.grey)
-                              ],
-                              color: Colors.cyan,
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: mBorderColor, width: 1),
-                            ),
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  "images/verification-of-delivery-list-clipboard-symbol.png",
-                                  scale: 20,
-                                  color: mIconeColor,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "Pick N History",
-                                        style: mServiceTitleStyle,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  //
-                ],
-              ),
-            ),
+            // Container(
+            //   color: Colors.white,
+            //   height: 80,
+            //   margin: const EdgeInsets.only(left: 16, right: 16),
+            //   child: Column(
+            //     children: [
+            //       Row(
+            //         children: [
+            //           Expanded(
+            //             child: InkWell(
+            //               onTap: () {
+            //                 Navigator.pushNamed(
+            //                     context, MyRouts.pickandDropRout);
+            //               },
+            //               child: Container(
+            //                 margin: const EdgeInsets.only(right: 8),
+            //                 padding: const EdgeInsets.only(left: 16),
+            //                 height: 64,
+            //                 decoration: BoxDecoration(
+            //                   boxShadow: [
+            //                     BoxShadow(
+            //                         blurRadius: 5,
+            //                         spreadRadius: .2,
+            //                         color: Colors.grey)
+            //                   ],
+            //                   color: Colors.cyan,
+            //                   borderRadius: BorderRadius.circular(12),
+            //                   border: Border.all(color: mBorderColor, width: 1),
+            //                 ),
+            //                 child: Row(
+            //                   children: [
+            //                     Image.asset("images/distance.png",
+            //                         scale: 15, color: mIconeColor),
+            //                     Padding(
+            //                       padding: const EdgeInsets.only(left: 10),
+            //                       child: Column(
+            //                         crossAxisAlignment:
+            //                             CrossAxisAlignment.start,
+            //                         mainAxisAlignment: MainAxisAlignment.center,
+            //                         children: [
+            //                           Text(
+            //                             "Pick & Drop",
+            //                             style: mServiceTitleStyle,
+            //                           ),
+            //                         ],
+            //                       ),
+            //                     ),
+            //                   ],
+            //                 ),
+            //               ),
+            //             ),
+            //           ),
+            //           Expanded(
+            //             child: InkWell(
+            //               onTap: () {
+            //                 Navigator.pushNamed(
+            //                     context, MyRouts.pickandDropHistoryRout);
+            //               },
+            //               child: Container(
+            //                 margin: const EdgeInsets.only(right: 8),
+            //                 padding: const EdgeInsets.only(left: 16),
+            //                 height: 64,
+            //                 decoration: BoxDecoration(
+            //                   boxShadow: [
+            //                     BoxShadow(
+            //                         blurRadius: 5,
+            //                         spreadRadius: .2,
+            //                         color: Colors.grey)
+            //                   ],
+            //                   color: Colors.cyan,
+            //                   borderRadius: BorderRadius.circular(12),
+            //                   border: Border.all(color: mBorderColor, width: 1),
+            //                 ),
+            //                 child: Row(
+            //                   children: [
+            //                     Image.asset(
+            //                       "images/verification-of-delivery-list-clipboard-symbol.png",
+            //                       scale: 20,
+            //                       color: mIconeColor,
+            //                     ),
+            //                     Padding(
+            //                       padding: const EdgeInsets.only(left: 10),
+            //                       child: Column(
+            //                         mainAxisAlignment: MainAxisAlignment.center,
+            //                         children: [
+            //                           Text(
+            //                             "Pick N History",
+            //                             style: mServiceTitleStyle,
+            //                           ),
+            //                         ],
+            //                       ),
+            //                     ),
+            //                   ],
+            //                 ),
+            //               ),
+            //             ),
+            //           ),
+            //         ],
+            //       ),
+            //       const SizedBox(
+            //         height: 16,
+            //       ),
+            //       //
+            //     ],
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.only(left: 16, bottom: 12),
               child: Center(

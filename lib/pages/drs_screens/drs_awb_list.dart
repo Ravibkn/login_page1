@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
+import 'package:first_work/components/custom_button.dart';
 import 'package:first_work/routs.dart';
 import 'package:flutter/material.dart';
 
@@ -57,17 +58,7 @@ class DrsAwbList extends StatelessWidget {
                   style: TextStyle(fontSize: 13),
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text("Get Direction"),
-                style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            side: BorderSide(color: Colors.grey.shade100))),
-                    backgroundColor: MaterialStateProperty.all(Colors.cyan),
-                    minimumSize: MaterialStateProperty.all(Size(100, 45))),
-              )
+              CustomButton(text: "Get Direction", onTap: () {})
             ],
           ),
         ),

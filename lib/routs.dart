@@ -22,4 +22,6 @@ class MyRouts {
   static String pickupawbupdatedaterout = "/pickupawbupdate";
   static String pickupawbhistoryrout = "/pickupawbhistory";
   static String pickupdetallHistoryrout = "/pickupdetallhistory";
+  static String splashScreenrout = "/splashscreen";
+  static String biomatricrout = "/biomatric";
 }

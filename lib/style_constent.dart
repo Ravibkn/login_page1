@@ -89,21 +89,19 @@ var mTextStyleHeader = TextStyle(
   ],
 );
 var mTextStyleButton = TextStyle(
-  fontSize: 17,
-  fontWeight: FontWeight.bold,
   color: Color.fromARGB(232, 255, 255, 255),
-  shadows: <Shadow>[
-    Shadow(
-      offset: Offset(2.0, 2.0),
-      blurRadius: 3.0,
-      color: Color.fromARGB(255, 0, 0, 0),
-    ),
-    Shadow(
-      offset: Offset(2.0, 2.0),
-      blurRadius: 8.0,
-      color: Color.fromARGB(124, 94, 94, 107),
-    ),
-  ],
+  // shadows: <Shadow>[
+  //   Shadow(
+  //     offset: Offset(2.0, 2.0),
+  //     blurRadius: 3.0,
+  //     color: Color.fromARGB(255, 0, 0, 0),
+  //   ),
+  //   Shadow(
+  //     offset: Offset(2.0, 2.0),
+  //     blurRadius: 8.0,
+  //     color: Color.fromARGB(124, 94, 94, 107),
+  //   ),
+  // ],
 );
 
 var mButtonStyle = ButtonStyle(

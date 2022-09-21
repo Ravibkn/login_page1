@@ -12,14 +12,12 @@ import 'package:first_work/components/mydrawer.dart';
 
 import 'package:first_work/pages/drs_list.dart';
 import 'package:first_work/pages/profile.dart';
-import 'package:first_work/style_constent.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
 
 class NavBar extends StatefulWidget with NavigationStates {
   const NavBar({Key? key}) : super(key: key);
-
   @override
   State<NavBar> createState() => _NavBarState();
 }
@@ -52,12 +50,12 @@ class _NavBarState extends State<NavBar> {
         backgroundColor: Colors.cyan,
         title: Center(
           child: Padding(
-            padding: const EdgeInsets.only(right: 48.0),
-            child: Text(
-              "Driver App",
-              style: mTextStyleHeader,
-            ),
-          ),
+              padding: const EdgeInsets.only(right: 48.0),
+              child: Image.asset(
+                "images/logo_old.png",
+                scale: 1.8,
+                color: Colors.white,
+              )),
         ),
       ),
       drawer: MySidebar(),

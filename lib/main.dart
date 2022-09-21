@@ -12,6 +12,7 @@ import 'package:first_work/pages/drs_screens/drs_awb_list.dart';
 import 'package:first_work/pages/drs_screens/drs_detall.dart';
 import 'package:first_work/pages/drs_screens/photo_page.dart';
 import 'package:first_work/pages/drs_screens/sfsignature_page.dart';
+import 'package:first_work/pages/local_auth.dart';
 import 'package:first_work/pages/pick_and_drop.dart';
 import 'package:first_work/pages/pick_drop_history.dart';
 import 'package:first_work/pages/pickup%20history%20pages/pickup_awb_page.dart';
@@ -21,6 +22,7 @@ import 'package:first_work/pages/pickup%20history%20pages/pickup_history.dart';
 import 'package:first_work/pages/pickup%20list%20page/pickup_list.dart';
 import 'package:first_work/pages/profile.dart';
 import 'package:first_work/pages/scan_awb.dart';
+import 'package:first_work/pages/splash_screen.dart';
 import 'package:first_work/routs.dart';
 import 'package:first_work/screens/drawerpage.dart';
 import 'package:first_work/sidebar_layout.dart';
@@ -49,7 +51,7 @@ class MyApp extends StatelessWidget {
       darkTheme: MyThemes.darkTheme(context),
       debugShowCheckedModeBanner: false,
       title: "Login_Signup UI",
-      initialRoute: MyRouts.loginRout,
+      initialRoute: MyRouts.splashScreenrout,
       routes: {
         MyRouts.loginRout: (context) => LoginSignUpPage(),
         MyRouts.sidebarRout: (context) => SidebarLayOut(),
@@ -74,6 +76,8 @@ class MyApp extends StatelessWidget {
         MyRouts.pickupawbupdatedaterout: (context) => PickupAwbUpdate(),
         MyRouts.pickupawbhistoryrout: (context) => PickupAwbHistory(),
         MyRouts.pickupdetallHistoryrout: (context) => PickupDetallHistory(),
+        MyRouts.splashScreenrout: (context) => Splash(),
+        MyRouts.biomatricrout: (context) => LocalAuth(),
       },
     );
   }

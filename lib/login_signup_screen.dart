@@ -12,6 +12,9 @@ class LoginSignUpPage extends StatefulWidget {
 }
 
 class _LoginSignUpPageState extends State<LoginSignUpPage> {
+  @override
+  
+
   bool isMale = true;
   bool isSignupScreen = true;
   bool isRememberMe = false;
@@ -35,7 +38,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
               ),
               child: Container(
                 padding: EdgeInsets.only(top: 70, left: 20),
-                color: Color(0xFF3b5999).withOpacity(.85),
+                color: Colors.cyan.withOpacity(.75),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
