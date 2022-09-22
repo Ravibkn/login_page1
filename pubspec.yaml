@@ -28,7 +28,6 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   accordion: ^2.5.1
-  
   bloc: ^8.0.3
   card_swiper: ^2.0.4
   community_material_icon: ^5.9.55

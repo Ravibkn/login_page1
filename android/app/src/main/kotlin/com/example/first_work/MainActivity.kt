@@ -1,6 +1,7 @@
 package com.example.first_work
 
-import io.flutter.embedding.android.FlutterFragmentActivity
+ import io.flutter.embedding.android.FlutterFragmentActivity
 
-class MainActivity: FlutterFragmentActivity() {
-}
+  class MainActivity: FlutterFragmentActivity() {
+     
+  }

@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, use_build_context_synchronously, avoid_print
 
-import 'dart:ffi';
 
 import 'package:first_work/login_signup_screen.dart';
+import 'package:first_work/pages/local_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -23,7 +23,7 @@ class _SplashState extends State<Splash> {
   _navigatetologin() async {
     await Future.delayed(Duration(milliseconds: 10000), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => LoginSignUpPage()));
+        context, MaterialPageRoute(builder: (context) => LocalAuth()));
   }
 
   @override
@@ -44,7 +44,7 @@ class _SplashState extends State<Splash> {
               Center(
                 child: Lottie.network(
                     "https://assets8.lottiefiles.com/packages/lf20_jmejybvu.json"),
-              )
+              ),
             ],
           )),
     );
